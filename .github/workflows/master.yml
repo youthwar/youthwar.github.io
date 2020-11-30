@@ -18,10 +18,8 @@ jobs:
       with:
         node-version: ${{env.NODE_VERSION}}
       
-      run: |
-        yarn
-        yarn build
-        
+    - run: yarn
+    - run: yarn build
     - uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
