@@ -18,6 +18,7 @@ export default styled.div({
     float: 'left',
     paddingLeft: '0px',
     borderRight: 'none',
+    paddingTop: '15px',
     borderBottom: '1px solid #ddd',
   } 
 });

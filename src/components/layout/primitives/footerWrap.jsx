@@ -13,4 +13,7 @@ export default styled.div({
   borderTop: '1px solid #ccc',
   backgroundColor: 'whiteSmoke',
   zIndex: 9,
+  ['@media screen and (max-width: 1175px)']: { 
+    textAlign: 'center',
+  }
 });

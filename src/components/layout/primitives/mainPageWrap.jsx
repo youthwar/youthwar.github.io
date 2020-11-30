@@ -10,6 +10,8 @@ export default styled.div({
   ['@media screen and (max-width: 1175px)']: {
     width: '100%',
     maxWidth: '100%',
-    left: '0'
+    left: '0',
+    marginTop: '50px',
+    paddingBottom: '100px',
   } 
 });
