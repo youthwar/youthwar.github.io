@@ -2,3 +2,6 @@
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 import 'codemirror/mode/javascript/javascript'
+import { wrapRootElement as wrap } from './wrap-root-element'
+
+export const wrapRootElement = wrap

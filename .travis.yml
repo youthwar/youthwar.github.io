@@ -15,7 +15,6 @@ jobs:
  include:
     - stage: lint
       script: yarn lint
-      
     - stage: deploy
       if: type != pull_request
       script: yarn deploy
