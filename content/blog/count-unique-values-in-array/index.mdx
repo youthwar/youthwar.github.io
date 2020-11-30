@@ -1,0 +1,33 @@
+---
+title: Count unique values in an array
+date: '2020-11-12T15:04:49.438Z'
+tags: ['algorithm', 'js', 'sliding window pattern' ]
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { countUniqueValues } from '@codeSnippets';
+
+<LeftColumn>
+  <h1>Sliding window pattern</h1>
+
+  Ok so for this particular algorithm to work we want to sort the array input. This is using the sliding window pattern
+  in which we avoid looping the array more then once, instead we set our first pointer at 0, then we start iterating through the array
+  starting at the second value. Below I will step through what is happening. <br /><br />
+  <ol>
+    <li>The first thing we want to do is sort the array given using this little track to remind me of the sort order</li>
+    <li>Our first pointer is going to be pointed to the first value of 1 in my example</li>
+    <li>Start iterating on the second value, in my example this starts at the value 2</li>
+    <li>Inside of the for each loop, if the value at index i is the same, just keep incrementing the pointer j.</li>
+    <li>If the values at index at i and index of j are not the same, then increment the pointer of i + 1, and make the value 
+        at new index i (i + 1) to the current pointer of j.
+    </li>
+    <li>
+      This will make it so that the pointer at i will be the latest unique value. that will tell us the total count because 
+      we only increment when we come across a value we havent seen yet. this will augment the original array. 
+    </li>
+
+  </ol>
+</LeftColumn>
+
+<RightColumn>
+  <Editor code={countUniqueValues.beautyCode()} height={'420px'} runCode={true} />
+</RightColumn>

@@ -1,0 +1,38 @@
+---
+title: Same frequency of integer characters in two numbers
+date: '2020-11-12T17:44:41.693Z'
+tags: ['algorithm', 'js', 'interview question']
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { sameFrequency } from '@codeSnippets';
+
+<LeftColumn>
+  <h1>Interview Question</h1>
+  Write a function that given two integers, return if the characters of the integers have the same frequency of one another. 
+  <br />
+  <br />
+  
+  These examples should provide more insight.
+  <br />
+  <br />
+  <pre>
+    182, 281 // true <br />
+    34, 14 // false <br />
+    3589578, 5879385 // true <br />
+    22, 222 // false
+  </pre>
+  <h3>Stepping through the algorithm:</h3>
+  <ol>
+    <li>Convert the two arguments to string</li>
+    <li>Iterate through the first string</li>
+    <li>Add each character of the first string as a key to the first object and the value is the amount of times we have seen it.</li>
+    <li>Add each character of the second string as a key to the second object and the value is the amount of times we have seen it.</li>
+    <li>Iterate through the the first count object, if the key count for each letter dont equal the same as the second object then it should be false</li>
+  </ol>
+
+  
+</LeftColumn>
+
+<RightColumn>
+  <Editor code={sameFrequency.beautyCode()} height={'550px'} runCode={true} />
+</RightColumn>

@@ -1,14 +1,24 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
+    title: `exploratorium`,
+    author: `Maximiliano Ayala`,
+    description: `A brain dump`,
+    siteUrl: `https://youthwar.github.io`,
+    pathPrefix: "/",
     social: {
-      twitter: `mattinthecouch`,
+      twitter: `youthwar`,
     },
+    
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -142,5 +152,15 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@postComponents": path.resolve(__dirname, 'src/postComponents'),
+          "@codeSnippets": path.resolve(__dirname, 'src/codeExamples'),
+        },
+        extensions: []
+      }
+    }
   ],
 }

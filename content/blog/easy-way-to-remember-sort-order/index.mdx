@@ -1,0 +1,22 @@
+---
+title: Easy way to remember js sort order
+date: '2020-11-12T17:34:16.445Z'
+tags: ['helpful hack', 'js', '.sort()' ]
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { sortOrderReminder } from '@codeSnippets';
+
+<LeftColumn>
+  <h1>Easy Sort Reminder</h1>
+  So This is just a helpful reminder to anyone who may across this page. 
+  using <pre>Array.prototype.sort</pre> we can pass in a function to do a more lexical sort. 
+  By naming the parameters a, z it makes it a lot easier to remember in which order we are sorting. 
+  <br />
+  <br />
+  Please note that this will sort in place of the array. In my example I am utilizing <pre>.slice()</pre> to give me a copy
+  of the first array.
+</LeftColumn>
+
+<RightColumn>
+  <Editor code={sortOrderReminder.beautyCode()} height={'240px'} runCode={true} />
+</RightColumn>

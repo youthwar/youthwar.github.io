@@ -1,15 +1,25 @@
 language: node_js
-
+node_js:
+  - 10.15
+branches:
+  only: 
+    - APP_BASE
+    - /^v.*$/
+install:
+  - yarn
 os:
   - linux
   - osx
 
-node_js:
-  - 'node'
-  - 'lts/*'
-  - '7'
-  - '8'
+jobs:
+ include:
+    - stage: lint
+      script: yarn lint
+      
+    - stage: deploy
+      if: type != pull_request
+      script: yarn deploy
 
-script:
-  - npm install
-  - npm run lint
+stages:
+  - lint
+  - deploy

@@ -1,0 +1,56 @@
+---
+title: Given an array are there duplicate values ? 
+date: '2020-11-30T17:32:27.582Z'
+tags: ['algorithm', 'js', 'interview question']
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { areThereDuplicates1, areThereDuplicates2, areThereDuplicates3 } from '@codeSnippets';
+
+<LeftColumn>
+  <h1>Interview Question</h1>
+  Given an array are there duplicates?
+  <br />
+  <br />
+  These examples should provide more insight.
+  <br />
+  <br />
+  <pre>
+    [1,2,2] // true <br />
+    [1,2,3] // false <br />
+    ['a','b','c'] // false <br />
+    ['a', 'A', 'c'] // false
+  </pre>
+  In all of these solutions these are all basically the same. We iterate through the array and create a object map
+  where the keys are the values, as we continue itterating through it we increase the value of the item. 
+  Since we are using an object or a set those values are unique. Therefore we can iterate through the keys and checking the values (count) 
+  if any value is more than one then we know there is at least one duplicate. 
+  <br />
+  <br />
+  <h3>Stepping through the algorithm:</h3>
+  <ol>
+    <li>
+      Iterate through the array add each value as a key in an object with the value of the existing
+      value or 1 if the value is new.
+    </li>
+    <li>
+      Iterate throguh the object or set map and check out the values, if any has a count of greater than 1 then return true.
+    </li>
+    <li>
+      If we have seen all of the keys in the object and none are above the count of one we can say there is no duplicates
+    </li>
+  </ol>
+
+  
+</LeftColumn>
+
+<RightColumn>
+  <h2>Solution 1</h2>
+  <Editor code={areThereDuplicates1.beautyCode()} height={'350px'} runCode={true} />
+
+  <h2>Solution 2</h2>
+  <Editor code={areThereDuplicates2.beautyCode()} height={'350px'} runCode={true} />
+
+  <h2>Solution 3</h2>
+  <Editor code={areThereDuplicates3.beautyCode()} height={'350px'} runCode={true} />
+  
+</RightColumn>
