@@ -1,0 +1,72 @@
+---
+title: Default Webpack configuration with typescript, react, babel
+date: '2020-10-01T01:04:10.617Z'
+tags: ['webpack', 'js', 'typescript', 'babel', 'build', 'pattern', 'how-to']
+---
+
+import { Editor, LeftColumn, RightColumn, Section, PreWrap } from '@postComponents';
+import { 
+  defaultBabel, 
+  defaultFolderStructure, 
+  defaultWebpack, defaultSetupYarn } from '@codeSnippets';
+
+<Section>
+<LeftColumn>
+
+  This is my default webpack config for the time being, this is a pretty good starting point. 
+  This should actually be a living document as I believe this will change as trends do.<br /><br />
+
+  Here is the yarn instructions <br /><br />
+  <pre dangerouslySetInnerHTML={{__html: defaultSetupYarn.snippet }}></pre>
+
+
+</LeftColumn>
+
+<RightColumn>
+
+  <h2>Given This folder structure:</h2>
+  <pre dangerouslySetInnerHTML={{__html: defaultFolderStructure.snippet }}></pre>
+
+</RightColumn>
+</Section>
+
+<Section>
+<LeftColumn>
+  <h2>Babel Config</h2>
+  This is my standard babel config. Theres a few points to note here:
+  <ol>
+    <li>In production mode we will remove prop types</li>
+    <li>Im using a dynamic import plugin along with the react-loadable plugin</li>
+    <li>Plugin proposals allow for features that are not yet ready available for ecmascript</li>
+    <li>We are adding the react preset</li>
+    <li>We are adding the typescript preset</li>
+  </ol>
+</LeftColumn>
+<RightColumn>
+<h2>babel.config.js</h2>
+<pre dangerouslySetInnerHTML={{__html: defaultBabel.snippet }}></pre>
+
+</RightColumn>
+</Section>
+
+<Section>
+<LeftColumn>
+  <h2>Webpack Config</h2>
+  And here is the actual webpack config. 
+  a couple notes here : <br /><br />
+  <ol>
+    <li>Dev Server run on port 3000 using the dist directory as the base</li>
+    <li>We are using file loader to load ts files along with images and fonts, with images we are limiting to 1mb</li>
+    <li>We are using the split chunks optimizer for code splitting.</li>
+  </ol>
+
+</LeftColumn>
+<RightColumn>
+
+  <h2>webpack.config.js</h2>
+
+  <pre dangerouslySetInnerHTML={{__html: defaultWebpack.snippet }}></pre>
+
+</RightColumn>
+
+</Section>

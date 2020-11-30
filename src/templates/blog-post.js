@@ -2,39 +2,28 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Bio from '../components/Bio'
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
+import Layout from '../components/Layout';
+import SEO from '../components/seo';
+import { rhythm, scale } from '../utils/typography';
+import BlogWrap from '../components/blogLayout/blogWrap';
+import PostDate from '../components/blogLayout/postDate';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.mdx
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-    console.log(this.props.pageContext)
-
+    const post = this.props.data.mdx;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const { previous, next } = this.props.pageContext;
+    const allPosts = this.props.data.allMdx.edges;
+    
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} allPosts={allPosts}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
+        <BlogWrap>
+          <PostDate>{post.frontmatter.date}</PostDate>
+          <h1>{post.frontmatter.title}</h1>
+
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </BlogWrap>
 
         <ul
           style={{
@@ -77,12 +66,28 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 100000)
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
       }
       body
+    }
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 100000)
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MM-DD-YYYY")
+            title
+            tags
+          }
+        }
+      }
     }
   }
 `

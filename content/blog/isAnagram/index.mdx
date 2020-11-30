@@ -1,0 +1,31 @@
+---
+title: Is this second string and anagram of the first?
+date: '2020-11-12T15:04:49.438Z'
+tags: ['algorithm', 'js' ]
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { isAnagram } from '@codeSnippets';
+
+<LeftColumn>
+
+  <h1>Is Anagram</h1>
+  <pre>/ˈanəˌɡram/</pre>
+  Definition: a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.<br /><br />
+
+  Given two strings, is the second string an anagram of the first ? <br /><br />
+  This algrorithm is pretty simple and straightforward. <br /><br />
+  <ol>
+    <li>Check if the two strings are the same length, anagrams of each other by definition cannot be of different lengths. Bail early if this is true</li>
+    <li>Create a lookup object to store the letters of the first string, the key should be the letter and the value will be incremented everytime that letter has been seen, 
+        since objects keys are unique we should only have one key for every letter.
+    </li>
+    <li>Iterate through the first string, adding each letter to the object as a key and if the letter has been seen increment the count</li>
+    <li>Iterate through the second string, if the current letter doesnt exist in the object (the first string) then bail early, otherwise decrement the value</li>
+    <li>Finally if we get through the entire second string with no issue that means we have a valid anagram!</li>
+  </ol>
+
+</LeftColumn>
+
+<RightColumn>
+  <Editor code={isAnagram.beautyCode()} height={'350px'} runCode={true} />
+</RightColumn>
