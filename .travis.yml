@@ -3,7 +3,7 @@ node_js:
   - 10.15
 branches:
   only: 
-    - APP_BASE
+    - master
     - /^v.*$/
 install:
   - yarn
