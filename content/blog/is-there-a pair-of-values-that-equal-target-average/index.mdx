@@ -21,8 +21,28 @@ import { averagePair } from '@codeSnippets';
   
   <br />
 
-  The import part of this algorithm is the inital sorting. Since we are using a multiple pointer pattern
-  for this to work we need to make sure it is sorted ascending.
+  The important part of this algorithm is the inital sorting. Since we are using a multiple pointer pattern
+  for this to work we need to make sure it is sorted ascending.<br /><br />
+
+  <h3>Stepping through the algorithm:</h3>
+  <ol>
+    <li>
+      First lets sort the array. this is crucial.
+    </li>
+    <li>
+      We create a pointer to the begining of the array and the end of the array.
+    </li>
+    <li>
+      Lets loop our way from the outside in
+    </li>
+    <li>
+      Now we need to create the average, on line 8. and on line 9 lets see if thats the average you are looking for.
+    </li>
+    <li>
+        Heres where its gets mathematical, if the average is less then target, then we move the start pointer up one, 
+        remember this is why we sorted the array, because if the average is too low, obviously one of those integers should be higher.
+    </li>
+  </ol>
 
   
 </LeftColumn>

@@ -1,0 +1,53 @@
+---
+title: In an array of integers, what is the minimum amount of values to equal the sum provided
+date: '2020-12-08T18:41:25.229Z'
+tags: ['algorithm', 'js', 'interview question', 'general-question']
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { minSubArrayLen } from '@codeSnippets';
+
+<LeftColumn>
+
+  <h1>Find the minimum amount of values that equals the total you pass in.</h1>
+
+  Given an array, lets figure out what is the smallest amount of values in the array that would equal the requested sum <br /><br />
+  This algrorithm is pretty simple and straightforward. <br /><br />
+  example input:
+  <pre>
+    ([100,200,300,400], 2) // 700 <br />
+    ([-1,34,21,18, -43], 3) // 73 <br />
+    ([-3,3,0,6,-1, 82],4) // 87 <br />
+    ([1,3,3,5,6,-7,10,-12,19], 5) // 18 <br />
+  </pre>
+  <br />
+  <h3>Stepping through the algorithm:</h3>
+  <ol>
+    <li>
+      We need to initialize some variables we want to have a start, end, a total, and a minimum length
+    </li>
+    <li>
+      Now we want to iterate as long as our start that we set up does not cross the threshold of the length of our array of values
+    </li>
+    <li>
+      If the total is smaller than the requested total, then we need to move our window to the right
+    </li>
+    <li>
+      We want to set the total to the value of the end here, because this is our starting total. We want to update the end here by one
+    </li>
+    <li>
+      Now If the total is bigger or the same than the requested total, we have to do a few things 1. set the min length to the difference of the start and the end
+      , next we want to set the total to be the difference of the start index, finally we can make our sum window smaller by moving the start to the right by one.
+    </li>
+    <li>
+      Now if the total is smaller than the value requested and we reach the end of our array we need to break because this will go on forever.
+    </li>
+    <li>
+      Finally if the min length hasnt changed from our initial value of Infinity then we know that we are at 0 sub array since no values work !
+    </li>
+  </ol>
+
+</LeftColumn>
+
+<RightColumn>
+  <Editor code={minSubArrayLen.beautyCode()} height={'700px'} runCode={true} />
+</RightColumn>
