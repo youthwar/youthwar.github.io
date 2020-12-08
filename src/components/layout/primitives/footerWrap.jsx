@@ -3,8 +3,10 @@ import styled from '@emotion/primitives'
 import { rhythm, scale } from '../../../utils/typography';
 
 export default styled.div({
+
   position: 'absolute',
   bottom: '0',
+  left: '0',
   width: '100%',
   height: '45px',
   padding: '10px',
@@ -13,7 +15,6 @@ export default styled.div({
   borderTop: '1px solid #ccc',
   backgroundColor: 'whiteSmoke',
   zIndex: 9,
-  ['@media screen and (max-width: 1175px)']: { 
-    textAlign: 'center',
-  }
+  
+  
 });

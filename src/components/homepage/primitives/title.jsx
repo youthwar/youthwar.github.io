@@ -7,7 +7,7 @@ const titleWrap = styled.div({
   marginRight: '20px',
   textTransform: 'uppercase',
   ['@media screen and (max-width: 1175px)']: {
-    
+    width: '100%',
   } 
 })
 

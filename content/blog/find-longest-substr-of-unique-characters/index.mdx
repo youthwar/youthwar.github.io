@@ -1,0 +1,59 @@
+---
+title: Find the longest substr of unique characters
+date: '2020-12-08T21:33:40.987Z'
+tags: ['algorithm', 'js', 'interview question']
+---
+
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { findLongestSubstr } from '@codeSnippets';
+
+<LeftColumn>
+  <h1>Interview Question</h1>
+  Find the longest substring that contains all unique values
+  <br />
+  <br />
+  example input:
+  <pre>
+    ('rithmschool') // 7 <br />
+    ('this is awesome') // 6 <br />
+    ('the cat in the hat') // 7 <br />
+    ('') // 0 <br />
+    ('ccccc') // 1
+  </pre>
+  
+  <br />
+  <h3>Stepping through the algorithm:</h3>
+  <ol>
+    <li>
+      Lets initialize some variables, we want longest, seen and start
+    </li>
+    <li>
+      Iterate through the string as you would ltr 
+    </li>
+    <li>
+      Create a pointer to the character
+    </li>
+    <li>
+      Lets check the seen object we instiated to see if an a character was indeed seen
+    </li>
+    <li>
+      If we seen the character lets set the start value to be the largest of either the seen 
+      count of that character. or a previous, or 0 if we are just starting.
+    </li>
+    <li>
+      Now we can determine the longest value, we math.max to get the largest value , either the longest we have seen at this time
+      or the current idx that we calculate 
+    </li>
+    <li>
+      Finally lets update the seen Object with the current Index
+    </li>
+    <li>
+      The end of this iteration, we return the longest that we've found. thats it. 
+    </li>
+  </ol>
+</LeftColumn>
+
+<RightColumn>
+  <Editor code={findLongestSubstr.beautyCode()} height={'540px'} runCode={true} />
+</RightColumn>

@@ -1,0 +1,74 @@
+---
+title: In an array of integers, what is the maximum sum of n integers passed as a second parameter.
+date: '2020-12-08T18:41:25.229Z'
+tags: ['algorithm', 'js', 'interview question','general-question']
+---
+import { Editor, LeftColumn, RightColumn, Section } from '@postComponents';
+import { maxSumSubArray } from '@codeSnippets';
+
+<LeftColumn>
+  <h1>Interview Question</h1>
+  Given an array of integers are there two values that equate to the average passed in as a second parameter.
+  Theres a one caveat:
+  <ol>
+    <li>The sums must be created by consecutive values in the array</li>
+  </ol>
+  example input:
+  <pre>
+    ([100,200,300,400], 2) // 700 <br />
+    ([-1,34,21,18, -43], 3) // 73 <br />
+    ([-3,3,0,6,-1, 82],4) // 87 <br />
+    ([1,3,3,5,6,-7,10,-12,19], 5) // 18 <br />
+  </pre>
+  
+  <br />
+  <h3>Stepping through the algorithm:</h3>
+  <ol>
+    <li>
+      First Lets just make sure that we have enough values in the array for the asking value, if the amount of values
+      exceeds the amount of value in the array lets quit now.
+    </li>
+    <li>
+      Now, lets iterate through the first n amount of values in our array, and lets get our first total to compare against.
+      This will give us a total consisting of the first combination of values to be added. 
+    </li>
+    <li>
+      Now we will start iterating starting where we finished in the first loop. This will now allow us to look backwards. 
+    </li>
+  </ol>
+
+  <br />
+  The workflow of this for statement looks like this
+  <br />
+  <br />
+  
+  <ol>
+    <li>
+      At first we are going to set the current total to the one we calculated in 
+      the first iteration in the first example the total would be 300. // 100 + 200
+    </li>
+    <li>Set the first Pointer to the numOfValues requested, then lets iterate until we reach the end of our array</li>
+    <li>
+      Lets create a new Total where we subtract the index at i, and we create a new pointer to a value which would 
+      be the current index - numberOfValues // this would start in the begining of the array and move Forward. 
+    </li>
+    <li>
+      In the case of asking for the sum of two values, in the second for loop, this is the values of the loops:
+      <ol>
+        <li>the first iteration would define i as 2 in our example would be 300, and the pointer that we are comparing against would be 0 //(2 - 2)</li>
+        <li>The first iteration total is 300 // 100 + 200,  we get the currentTotal = now is going to equal 200  +  the currentTotal of 300, which gives us 500 </li>
+        <li>We run a Math.max to see which value is higher, in our first example it is now 500, and set that to the total to be picked up by the next iteration</li>
+        <li>the second iteration would define i as 3 in our first example is 400,  and the second pointer as 1 which is now equal to 200 // (3 - 2)</li>
+        <li>the second iteration total is 500 from before (Math.max) // </li>
+        <li>the second iteration the current total would be 700 // (400 - 200) + 500 </li>
+        <li>We finally have the highest sum here so we return 700</li>
+      </ol>
+    </li>
+  </ol>
+
+  
+</LeftColumn>
+
+<RightColumn>
+  <Editor code={maxSumSubArray.beautyCode()} height={'440px'} runCode={true} />
+</RightColumn>

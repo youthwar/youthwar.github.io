@@ -11,6 +11,9 @@ import areThereDuplicates1 from './areThereDuplicates1';
 import areThereDuplicates2 from './areThereDuplicates2';
 import areThereDuplicates3 from './areThereDuplicates3';
 import averagePair from './averagePair';
+import maxSumSubArray from './maxSumSubArray';
+import minSubArrayLen from './minSubArrayLen';
+import findLongestSubstr from './findLongestSubstr';
 
 export  {
   areThereDuplicates1,
@@ -22,7 +25,10 @@ export  {
   defaultFolderStructure,
   defaultWebpack,
   defaultSetupYarn,
+  findLongestSubstr,
   isAnagram,
+  maxSumSubArray,
+  minSubArrayLen,
   sameFrequency,
   sortOrderReminder,
   testSnippet
