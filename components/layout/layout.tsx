@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Col, Logo, Grid, Row, LeftNav, Main } from './';
 
 export default function Layout({ children, pageTitle, description, posts }: any) {
-  console.log({ posts, children });
   return (
     <>
       <Head>
