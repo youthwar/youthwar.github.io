@@ -20,5 +20,6 @@ jobs:
 
       - name: Build
         run: |
+          yarn
           yarn build
           yarn export
