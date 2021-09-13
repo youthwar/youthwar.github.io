@@ -1,0 +1,54 @@
+import BlogLayout from '@components/blogLayout';
+import LeftCol from '@components/leftCol';
+import RightCol from '@components/rightCol';
+import Section from '@components/section';
+import Editor from '@components/editor';
+
+import { BST, Node } from '@codeSnippets/binaryTrees';
+
+export const meta = {
+  title: 'JS Binary Search Tree Guide',
+  description: 'Creating and traversal methods for Binary Trees',
+  date: 'Sept 9th 2021',
+  categories: ['Datastructures'],
+  published: false
+}
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
+
+<Section>
+
+<LeftCol>
+
+  ### Generic Binary Search Tree Definition
+
+  This is the default setup for a tree.
+
+  ```
+                    ┌───┐
+                    │ a │
+                    └─┬─┘
+                      │
+               ┌───┐  │  ┌───┐
+               │ a ├──┴──┤ a │
+               └───┘     └───┘
+
+
+┌───┐                                   ┌───┐
+│ a │         ┌───┐                     │ a │
+└───┘         │ a │                     └───┘
+                └───┘
+
+  ```
+
+
+</LeftCol>
+
+<RightCol>
+
+<Editor code={`${Node}${BST}`} />
+
+</RightCol>
+
+
+</Section>
