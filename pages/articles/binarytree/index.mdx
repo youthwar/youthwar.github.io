@@ -1,7 +1,4 @@
-import BlogLayout from '@components/blogLayout';
-import LeftCol from '@components/leftCol';
-import RightCol from '@components/rightCol';
-import Section from '@components/section';
+import { BlogLayout, LeftSection, RightSection, Section } from '@components/layout';
 import Editor from '@components/editor';
 
 import { BST, Node } from '@codeSnippets/binaryTrees';
@@ -11,44 +8,58 @@ export const meta = {
   description: 'Creating and traversal methods for Binary Trees',
   date: 'Sept 9th 2021',
   categories: ['Datastructures'],
-  published: false
+  published: true
 }
 
 export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
 
 <Section>
 
-<LeftCol>
+<LeftSection size={4}>
 
   ### Generic Binary Search Tree Definition
 
-  This is the default setup for a tree.
+  ```
+                          ┌────┐          Depth │
+   Level 0                │ 23 │                │
+                          └──┬─┘                │
+                             │                  │
+                  ┌────┐     │    ┌────┐        │
+   Level 1        │ 11 │◄────┴───►│ 32 │        │
+                  └──┬─┘          └──┬─┘        │
+                     │               │          │
+             ┌────┐  │      ┌────┐   │   ┌────┐ │
+   Level 2   │  8 │◄─┘      │ 13 │◄──┴──►│ 52 │ │
+             └────┘         └────┘       └────┘ ▼
+              ◄────────────────────────────────►
+              Breadth
+
 
   ```
-                    ┌───┐
-                    │ a │
-                    └─┬─┘
-                      │
-               ┌───┐  │  ┌───┐
-               │ a ├──┴──┤ a │
-               └───┘     └───┘
+
+  Above is an accurate representation of a binary search tree. 
+  <br />
+  Theres a few things we can point out the above:
+
+  1. Every value that is less then the parent head is to the left.
+  2. Every value greater than the head is to the right.
+  3. This tree has a depth of 3 levels
+  4. This tree is not balanced because at level 2 there is no value to the right of 8.
+  <br />
 
 
-┌───┐                                   ┌───┐
-│ a │         ┌───┐                     │ a │
-└───┘         │ a │                     └───┘
-                └───┘
+  In our code example we can see a few items here:
+  1. We have an auxiliary function that returns our basic instace of a node or you can view it as just the lowest leaf.
+  2. 
 
-  ```
+</LeftSection>
 
-
-</LeftCol>
-
-<RightCol>
+<RightSection size={8} height={600}>
 
 <Editor code={`${Node}${BST}`} />
 
-</RightCol>
+</RightSection>
 
 
 </Section>
+
