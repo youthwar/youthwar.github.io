@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Col, Logo, Grid, Row, LeftNav, Main } from './';
+import Search from '../search';
 
 export default function Layout({ children, pageTitle, description, posts }: any) {
   return (
@@ -20,7 +21,7 @@ export default function Layout({ children, pageTitle, description, posts }: any)
                   Exploratorium
                 </Logo>
               </Link>
-              <input type="text" placeholder="Search"/>
+              <Search posts={posts} />
               <hr />
             </LeftNav>
           </Col>

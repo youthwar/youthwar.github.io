@@ -1,6 +1,7 @@
 import {Controlled as CodeMirror} from 'react-codemirror2'
-import 'codemirror/mode/javascript/javascript'
-import 'codemirror/lib/codemirror.css'
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/lib/codemirror.css';
+
 const codeEditor = ({ code, height }: { code: string; height: string; }) => {
   return (
     <div style={{ height }}>

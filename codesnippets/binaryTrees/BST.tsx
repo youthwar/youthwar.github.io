@@ -4,7 +4,7 @@ class BST {
     this.root = null;
   }
 
-  create(value) {
+  add(value) {
     const newNode = new Node(value);
     if (!this.root) {
       this.root = newNode;

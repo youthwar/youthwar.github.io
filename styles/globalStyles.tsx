@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle({
     margin: 0,
     padding: 0,
     fontFamily: 'Open-Sans, Helvetica, Sans-Serif'
+  },
+  pre: {
+    background: 'whitesmoke'
   }
 });
  

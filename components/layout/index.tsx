@@ -1,7 +1,13 @@
 export { default as Layout } from './layout';
-
+export { default as BlogLayout } from './blogLayout';
 export { Grid, Row, Col } from './primitives/grid';
 export { LeftNav } from './primitives/leftNav';
 export { Main } from './primitives/mainPage';
 export { Logo } from './primitives/logo';
 export { PostList } from './primitives/postList';
+export { PostTitle } from './primitives/postTitle';
+export { Section } from './primitives/blogSection';
+export { LeftSection } from './primitives/leftSection';
+export { CenterSection } from './primitives/centerSection';
+export { RightSection } from './primitives/rightSection';
+export { BlogGrid } from './primitives/blogGrid';
