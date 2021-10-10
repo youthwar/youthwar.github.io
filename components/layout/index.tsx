@@ -8,5 +8,6 @@ export { PostList } from './primitives/postList';
 export { PostTitle } from './primitives/postTitle';
 export { Section } from './primitives/blogSection';
 export { LeftSection } from './primitives/leftSection';
+export { CenterSection } from './primitives/centerSection';
 export { RightSection } from './primitives/rightSection';
 export { BlogGrid } from './primitives/blogGrid';

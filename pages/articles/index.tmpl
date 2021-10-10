@@ -1,16 +1,12 @@
-import BlogLayout from '@components/blogLayout';
-import Title from '@components/title';
-import LeftCol from '@components/leftCol';
-import RightCol from '@components/rightCol';
-import Section from '@components/section';
+import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
 import Editor from '@components/editor';
 
 export const meta = {
-  title: 'Introduction to Next JS',
-  description: 'Getting started with the Next framework',
+  title: 'JS Linked Lists Guide',
+  description: 'a comprehensive linked list guide.',
   date: 'Aug 04, 2020',
-  categories: ['test'],
-  published: true
+  categories: ['test'],  
+  published: false
 }
 
 export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
