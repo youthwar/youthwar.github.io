@@ -1,11 +1,24 @@
 export default `
-const exampleArray = ['a', 'b', 'c'];
+const exampleArray = new Array(3);
+
+exampleArray[0] = 'a';
+exampleArray[1] = 'b';
+exampleArray[2] = 'c';
+
+console.log(exampleArray); // origin
 
 exampleArray.push('d') // O(1);
 
-logger(exampleArray);
+console.log(exampleArray);
 
-logger(exampleArray.pop()); // O(1) returns 'd'
+console.log(exampleArray.pop()); // O(1) returns 'd'
 
-logger({exampleArray});
+console.log({exampleArray});
+
+exampleArray.unshift('-z');
+console.log(exampleArray);
+
+console.log(exampleArray.shift()) // O(n);
+
+console.log(exampleArray);
 `;
