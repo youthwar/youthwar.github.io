@@ -9,6 +9,8 @@ export default  styled.pre({
   borderRadius: '4px',
   border: '1px solid #292929',
   position: 'relative',
+  width: '100%',
+  maxWidth: '790px',
   'label': {
     fontFamily: 'sans-serif',
     fontWeight: 'bold',
