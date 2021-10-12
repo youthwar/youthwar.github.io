@@ -22,7 +22,6 @@ export default function Layout({ children, pageTitle, description, posts }: any)
                 </Logo>
               </Link>
               <Search posts={posts} />
-              <hr />
             </LeftNav>
           </Col>
 

@@ -19,7 +19,7 @@
       "@codeSnippets/*": ["codesnippets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/search/index.jsx", "components/search/searcher.jsx"],
   "exclude": ["node_modules"],
   
 }

@@ -1,6 +1,6 @@
 const leftCol = ({ children }: any) => {
   return (
-    <div className="col-5">{ children  } </div>
+    <div className="col-5">{ children  }</div>
   )
 }
 

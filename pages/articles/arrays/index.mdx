@@ -1,0 +1,67 @@
+import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
+import exampleArray from '@codeSnippets/array';
+import Editor from '@components/editor';
+
+export const meta = {
+  title: 'JS Arrays',
+  description: 'a comprehensive look into the data structure arrays.',
+  date: 'October 11, 2021',
+  categories: ['js', 'datastructures'],  
+  published: true
+}
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
+
+<Section>
+
+  <LeftSection size={4}>
+
+  ## Introduction
+
+  Arrays are a datastructure that stores data sequentially (one after another). Arrays are iterable, meaning that you can start from any position or index and move in one direction or another.
+  <br /> 
+
+  In most programming languages there are two different types of arrays. Static | Dynamic 
+  
+
+
+  
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  ## My Headline
+
+  <Editor code={exampleArray}/>
+  
+  </RightSection>
+
+</Section>
+
+<Section>
+  
+  <CenterSection>
+
+  ### Basic Methods on an Array
+
+  | Method Name | Description                                                  | Big O time complexity                  |
+  | ----------- | ------------------------------------------------------------ | -------------------------------------- |
+  | push        | adds element to the end of an array                          | O(1)                                   |
+  | pop         | removes the item at the end of an array and returns it       | O(1)                                   |
+  | unshift     | adds an item at the begining of an array                     | O(n) // the length of the array        |
+  | shift       | removes the item at the beginning of an array and returns it | O(n) // worst case length of the array |
+  | splice      | removes an item at a given index and also gives you the oportunity to delete an item | O(n) // worst case length of the array |
+  
+  </CenterSection>
+
+</Section>
+
+<Section>
+
+  <LeftSection size={4}>
+
+  # Hey there New Section
+
+  </LeftSection>
+
+</Section>
