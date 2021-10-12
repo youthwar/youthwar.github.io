@@ -1,0 +1,95 @@
+import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
+import Editor from '@components/editor';
+import HashTable from '@codeSnippets/hashTables';
+import Implementation from '@codeSnippets/hashTables/implementation';
+
+export const meta = {
+  title: 'JS Hash Tables',
+  description: 'a comprehensive view of hash tables',
+  date: 'Oct 11, 2021',
+  categories: ['js', 'datastructure'],  
+  published: true
+}
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
+
+<Section>
+
+  <LeftSection size={4}>
+
+  ## Introduction 
+
+  Hashtables are universal, except that they are called slightly different things.
+
+  | Language   | HashTable Name |
+  | ---------- | -------------- |
+  | Python     | Dictionaries   |
+  | Javascript | Objects        |
+  | Java       | Maps           |
+  | Ruby       | Hashes         |
+
+  ### Hash Function
+  Under the hood this really relys on a hash function. The main property of a hash table that no matter of the 
+  input we will always get the same hash back. 
+
+  This function is known as **indempotent** meaning that it always returns the same value based on its input.
+
+  We use this hashfunction to create a hash for our memory allocation. 
+  
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  ## HashTable Example
+
+  <Editor code={HashTable}/>
+  
+  </RightSection>
+
+</Section>
+
+<Section>
+
+  <LeftSection size={4}>
+
+  # Implementation
+
+  Ok this is the our *from scratch* example of a hash table. 
+  We are using a class again here but this time in the constructor we are going to set a size.
+
+  I have created a basic hashing function that will allow us to always receive the proper item for the given key.
+
+  ### Hash Function (key: string | number | symbol)
+  1. Start a hash at 0
+  2. iterate through the key you want to use and grab the current character and the key code for it.
+  3. Multiply it by one just to make it unique and then we use the modulous operator to make sure it is within bounds of othe size of our structure.
+
+
+  ### Set Function (key: string | number | symbol, value: any)
+  1. The first thing we want to do is create a hash that we can point our values to in our data structure. We pass in the key since that is how we will retrieve this value.
+  2. We check if the value already exists, if it doesnt we want to instantiate it with an empty array ( this is so that we can handle collisions).
+  3. Now that a value is instatiated for the address, we simply push our value into that array as [key, value] this happens if it is found or not.
+
+
+  ### Get Function (key: string | number | symbol)
+  1. The first thing we do here is the same as the set function above. We pass the key to the hash function and we are able to retrieve the location
+  2. Now that we have the location of our desired item, we need to iterate the array. Because there might be collisions in our fixed sized hash table there could be multiple items allocated.
+  3. As we loop we just need to check that a. something exists, if it doesnt return undefined. b. now we just need to search each of the (potentially) nested arrays comparing the first value [0] with the key we want to retrieve.
+  4. When we find that key lets just return the value (up to you !) so this value would be if the first index matches the key we are looking for item[0] === key, then item[1] is the value that correspondes with it.
+  
+
+  ### Keys function
+  1. This function retrieves all of the keys of our structure. We need to iterate through our data property is which is an array.
+  2. Now we just need to check if this array is a nested array or if it is undefined. lets skip it if it is empty.
+  3. Now that we get each bucket we need to pull out the first value [0] out and push it to our return array. This needs to happen just incase there are memory allocation collisions we want to make sure that we get all of the keys!
+
+
+  </LeftSection>
+
+  <RightSection size={8}>
+    <Editor code={Implementation} height={'1080px'} />
+
+  </RightSection>
+
+</Section>

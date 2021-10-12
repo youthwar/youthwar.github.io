@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+const media = {
+  xs: (styles) => `
+    @media only screen and (max-width: 480px) {
+      ${styles}
+    }
+  `
+};
+
 export const Grid = styled.div({
   
 });
@@ -11,4 +19,7 @@ export const Row = styled.div({
 
 export const Col = styled.div({
   flex: (props) => props.size,
-})
+});
+
+
+

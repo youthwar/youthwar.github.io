@@ -6,5 +6,21 @@ export const Section = styled.div({
   display: 'flex',
   borderBottom: '1px solid #ccc',
   paddingBottom: '30px',
-  marginBottom: '30px'
+  marginBottom: '30px',
+  'table': {
+    borderCollapse: 'collapse',
+    'thead': {
+      borderBottom: '1px solid #ccc',
+
+    },
+    'th, td': {
+      textAlign: 'left',
+      padding: '10px'
+    },
+
+    'tr:nth-child(even)': {
+      backgroundColor: '#f2f2f2'
+    }
+  }
+
 });
