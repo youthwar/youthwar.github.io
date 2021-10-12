@@ -1111,6 +1111,11 @@ console-browserify@^1.1.0:
   resolved "https://registry.yarnpkg.com/console-browserify/-/console-browserify-1.2.0.tgz#67063cef57ceb6cf4993a2ab3a55840ae8c49336"
   integrity sha512-ZMkYO/LkF17QvCPqM0gxw8yUzigAOZOSWSHg91FH6orS7vcEj5dVZTidN2fQ14yBSdg97RqhSNwLUXInd52OTA==
 
+console-utils@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/console-utils/-/console-utils-1.0.3.tgz#4ef0770ac605bfc700f3029b1b76df1db8ec5805"
+  integrity sha1-TvB3CsYFv8cA8wKbG3bfHbjsWAU=
+
 constants-browserify@1.0.0, constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
