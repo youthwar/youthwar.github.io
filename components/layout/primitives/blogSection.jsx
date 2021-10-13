@@ -7,6 +7,10 @@ export const Section = styled.div({
   borderBottom: '1px solid #ccc',
   paddingBottom: '30px',
   marginBottom: '30px',
+  'pre': {
+    //padding: '15px',
+    marginTop: '15px 0px'
+  },
   'table': {
     borderCollapse: 'collapse',
     'thead': {
