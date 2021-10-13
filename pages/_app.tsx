@@ -34,7 +34,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   });
   
   const headAttributes = pageInfo[router.pathname];
-  console.log({ headAttributes });
   const title = headAttributes ? headAttributes.title : '';
   const description = headAttributes ? headAttributes.description : '';
   return (
