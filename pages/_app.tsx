@@ -26,10 +26,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     '/500': {
       title: 'WHOA',
       description: 'This is definitely my bad, sorry bud!'
+    },
+    '_error': {
+      title: 'DANG',
+      description: 'My bad dude...'
     }
   });
-
-  const { title, description } = pageInfo[router.pathname];
+  
+  const headAttributes = pageInfo[router.pathname];
+  console.log({ headAttributes });
+  const title = headAttributes ? headAttributes.title : '';
+  const description = headAttributes ? headAttributes.description : '';
   return (
     <>
       <GlobalStyle />
