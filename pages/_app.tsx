@@ -17,6 +17,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     '/': { 
       title: 'Exploratorium: Home', 
       description: "Welcome to the Exploratorium, or colloquially known as Youthwar's knowledge transfer."
+    },
+    '/400': {
+      title: 'Not Found',
+      description: 'Whatever you are after, it is not here bud'
+    },
+
+    '/500': {
+      title: 'WHOA',
+      description: 'This is definitely my bad, sorry bud!'
     }
   });
 
