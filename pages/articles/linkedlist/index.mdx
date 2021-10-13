@@ -1,12 +1,13 @@
 import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
 import Editor from '@components/editor';
-
+import LinkedList from '@codeSnippets/linkedList';
+import Implementation from '@codeSnippets/linkedList/implementation';
 export const meta = {
-  title: 'JS Linked Lists Guide',
+  title: 'JS Linked Lists',
   description: 'a comprehensive linked list guide.',
-  date: 'Aug 04, 2020',
-  categories: ['test'],  
-  published: false
+  date: 'Oct 11, 2021',
+  categories: ['js', 'datastructure'],  
+  published: true
 }
 
 export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
@@ -15,33 +16,53 @@ export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
 
   <LeftSection size={4}>
 
-  ## My Headline 
+  ## Introduction 
+  Linked Lists are a loose structure, we can insert or remove items by just changing some pointers as opposed to allocating a new block of memory for every item in an array. 
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut. Praesent ornare velit sit amet enim semper lacinia. Aenean nec sem lacus. Cras porta nunc nec leo lacinia sagittis. Aliquam ornare gravida cursus. Etiam ultrices massa quis erat scelerisque rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin lacinia sodales augue, non mattis ipsum pretium non. Morbi vehicula tempor blandit. Nam rhoncus, massa a maximus imperdiet, tortor risus aliquet tortor, nec lacinia eros nisi volutpat massa. Maecenas ut augue ipsum.
+  LL is a little bit slower because of the loose structure items might not be allocated next to each other in memory as it would be in an array.
 
-  Sed vehicula libero pulvinar
-  tincidunt ligula non, luctus massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas arcu purus, aliquam ac molestie ac, luctus eget sem. Sed pellentesque massa eros, condimentum commodo ligula cursus ut. Mauris sit amet molestie ipsum. Nullam venenatis est at purus mollis consectetur. Phasellus a ipsum a quam ullamcorper aliquet. Nunc gravida bibendum placerat.
+  This might be better than a hash table because there is an order of our items.
+  
+  Traversing is typically done with a while loop because we dont know where it might end.
+
+  Lastly Linked lists **almost** always have a reference to the head and the tail. Definitely the head.
+
+  To Further illustrate the datastructure, in the code editor there is what this linked list would look like in object form. Further down we will implement one where it is loosely allocated.
+  
   </LeftSection>
 
   <RightSection size={8}>
 
-  ## My Headline
-
-  <Editor code="console.log('yo')"/>
+     Head Node                            Tail Node
+    ┌───────────┐      ┌───────────┐     ┌───────────┐
+    │           │      │           │     │           │
+    │ Value: A  │      │ Value: B  │     │ Value: C  │
+    │ Next:─────┼─────►│ Next:─────┼────►│ Next:─────┼─► NULL
+    │           │      │           │     │           │
+    └───────────┘      └───────────┘     └───────────┘
   
+  <Editor code={LinkedList} />
+
   </RightSection>
 
 </Section>
+
 
 <Section>
   
   <CenterSection>
 
-  # Hey there this is my title
+  ## Basic Methods on a Linked List
 
-  lets add some plain text. this will just make sure that we are good to go.
-  Sed vehicula libero pulvinar tincidunt ligula non, luctus massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas arcu purus, aliquam ac molestie ac, luctus eget sem. Sed pellentesque massa eros, condimentum commodo ligula cursus ut. Mauris sit amet molestie ipsum. Nullam venenatis est at purus mollis consectetur. Phasellus a ipsum a quam ullamcorper aliquet. Nunc gravida bibendum placerat.
-  
+
+  | Method  | Description                                                  | Big O time complexity |
+  | ------- | ------------------------------------------------------------ | --------------------- |
+  | prepend | Adds a node to the begining of the linked list               | O(1)                  |
+  | append  | Adds a node to the very end of the list                      | O(1)                  |
+  | Lookup  | Traverses the linked list and returns the item               | O(n)                  |
+  | Delete  | Traverse the linked list removes the item by removing the references and then that removed item gets deleted in javascript by garbage collection | O(n)                  |
+    
+
   </CenterSection>
 
 </Section>
@@ -50,8 +71,18 @@ export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
 
   <LeftSection size={4}>
 
-  # Hey there New Section
+  # Implementation
+
+
+
+  
 
   </LeftSection>
+
+  <RightSection size={8}>
+  
+  <Editor code={Implementation} />
+
+  </RightSection>
 
 </Section>
