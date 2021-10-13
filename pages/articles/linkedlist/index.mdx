@@ -73,7 +73,56 @@ export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
 
   # Implementation
 
+  In this implementation of a linked list we will break down all of the methods belonging to a linked list.
 
+  ## Node class
+  1. This node class is used to define every item in our linked list.
+  2. This basic class just takes in a value and returns an object containing a value and a reference for its next node.
+
+
+  ## Linked List constructor
+  1. The constructor needs to set up a few values. It needs to set up a new node from the utility class. 
+  2. The constructor also needs to set the initial value as the head and set the same value for the tail.
+  3. Lastly we need to definte a length of the linked list, this is not always the case but always a good idea.
+
+
+  ## traverseToNode
+  1. This is a utility method, this is just to traverse our linked list until we arrive at our desired index.
+  2. Set a counter set to zero, create a reference to the current node, to begin with start with this.head.
+  3. Set a while loop to run while the counter is not equal to the index of the node we want to find.
+  4. set current node to the currentNode.next value and increment the counter.
+  5. Eventually you will arrive at the index you want and you should now return the currentNode.
+
+
+  ## append
+  1. Appending to the end of the ll. we pass in a value and we create a new node from it.
+  2. We then set the current tails next value to the new node we have just created.
+  3. Set the linked list's tail to this new node.
+  4. increment the length property of the linked list.
+
+
+  ## prepend
+  1. Similar to append we first must create a new node from the value passed in.
+  2. Since we are adding to the begining of the list it is pretty straight forward.
+  3. Set our new node next value to the current head node.
+  4. Increment the length of the linked list.
+
+
+  ## insert
+  1. Create a new node with the value that is passed in.
+  2. If our index that we want to insert is at zero, well then use our prepend method, if its greater then the length of our linked list well append :)
+  3. Use our utility function to traverse to the index we want but actually we want the one before. so index - 1.
+  4. Capture the next node ( this is the return node.next of the traversal in step 3) Since this is where we want to insert between the two.
+  5. set the leader.next value to the node we created and the newNode.next to the node in step 4. 
+  6. Increment the length of the linked list.
+
+
+  ## delete
+  1. Traverse using our utility function up until our desired index - 1.
+  2. Capture the next node of the result of step 1. This will be the node we want to delete.
+  3. Set the node we recieved in step one's next value to the node we want to deletes next pointer.
+  4. This effectively dereferences the node we want to delete and therefore gets garabage collected. 
+  5. Dont forget to decrement the value of the linked lists length :)
 
   
 
@@ -81,7 +130,7 @@ export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
 
   <RightSection size={8}>
   
-  <Editor code={Implementation} />
+  <Editor code={Implementation} height={'1400px'} />
 
   </RightSection>
 
