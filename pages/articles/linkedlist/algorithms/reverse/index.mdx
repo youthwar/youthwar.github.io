@@ -1,0 +1,108 @@
+import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
+import Editor from '@components/editor';
+import Reverse from '@codeSnippets/linkedList/algorithms/reverse';
+
+export const meta = {
+  title: 'JS Reverse a Linked List',
+  description: 'How to Reverse a linked list',
+  date: 'Oct 15, 2021',
+  categories: ['js', 'algorithm'],  
+  published: true
+}
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
+
+<Section>
+
+  <LeftSection size={4}>
+
+  ## Problem Statement 
+
+  Given a linked List that is demonstrated as such : 
+  
+  ``` 3, 5, 6, 7 ```
+   
+   return 
+   
+   ```7, 6, 5, 3``` 
+   
+   without taking up extra memory.
+
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  ## Linked List Diagram
+
+  
+     Head Node                            Tail Node
+    ┌───────────┐      ┌───────────┐     ┌───────────┐
+    │           │      │           │     │           │
+    │ Value: A  │      │ Value: B  │     │ Value: C  │
+    │ Next:─────┼─────►│ Next:─────┼────►│ Next:─────┼─► NULL
+    │           │      │           │     │           │
+    └───────────┘      └───────────┘     └───────────┘
+  
+  
+  </RightSection>
+
+</Section>
+
+<Section>
+
+  <LeftSection size={4}>
+
+  # Algorithm Walk through
+
+  Given this extremely simplified version of a linked list we just need to add a new method to this class. 
+  If you need a refresher on linked lists [here](/articles/linkedlist) is that article.
+
+  This is pretty simple. However we need to keep track of our pointers in a particular way.
+
+
+          Second
+          Pointer
+              │
+              │
+              ▼
+          3, 5, 6, 7
+          ▲     │
+          │     │
+        First   │
+        Pointer │
+                ▼
+              Temp
+              Pointer
+
+
+  ## Steps:
+  1. First thing first we should just make sure there are more than at least one nodes in our linked list so we say if !this.head.next return this.head;  this will just return the one node in that case.
+  2. We should also say that the tail should also be the head. this is pretty logical in the sense that we want to reverse this.
+  3. We need to create a few pointers here, lets create one called a first which should be the head. a second which is the first.next.
+  4. We need to loop so in order to do that we can just say as long as there is next on the second pointer lets keep going (i.e second.next !== null)
+  5. Now inside of our while loop, we want to create the temp pointer which will be our third in succession. 
+  
+
+  ## Meat of the algorithm:
+  1. We want to say that the second.next (third item) is equal to the  first.
+  2. The first pointer should be equal to the second.
+  3. the second pointer should now be the temp. 
+  4. Thats it for our while loop
+  5. outside of our while loop we want to say this.head.next = null; (this will now be our tail)
+  6. this.head is going to be our first item
+  7. then we just return the linked list.
+
+  What this is realistically doing is shuffling these items by saying the third item is going to be the first now. then we shuffle the second item to the first position.  we keep going and this will reverse our linked list :)
+
+
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  <Editor code={Reverse} height="900px" />
+
+  </RightSection>
+
+</Section>
