@@ -1,0 +1,78 @@
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charSet="utf-8"/><meta name="Description" content="a full list of the everything a post can have."/><title>Exploratorium: JS Doubly linked List</title><meta name="next-head-count" content="4"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script><script src="/_next/static/chunks/webpack-4987d600c581d75c7fd7.js" defer=""></script><script src="/_next/static/chunks/framework-717d42ae9e172961f2a5.js" defer=""></script><script src="/_next/static/chunks/main-1f2c591c5d3bfcfc95e6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-1190d0ffcffc67dd54cc.js" defer=""></script><script src="/_next/static/chunks/pages/articles/doublylinkedlist-25a2f141c1cc12b7b29c.js" defer=""></script><script src="/_next/static/GBZn7xTOxDazcFSNPerfi/_buildManifest.js" defer=""></script><script src="/_next/static/GBZn7xTOxDazcFSNPerfi/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="5.3.1">.biWZdL{background:none;width:100%;border:none;padding:7px;margin-top:20px;}/*!sc*/
+.biWZdL:focus{border:none;outline:none;}/*!sc*/
+data-styled.g1[id="searchBar__SearchBar-sc-12i2ryj-0"]{content:"biWZdL,"}/*!sc*/
+.dMwDvt{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+data-styled.g4[id="grid__Row-sc-lmebml-1"]{content:"dMwDvt,"}/*!sc*/
+.gPDqCs{-webkit-flex:1;-ms-flex:1;flex:1;}/*!sc*/
+.jMJBUk{-webkit-flex:10;-ms-flex:10;flex:10;}/*!sc*/
+data-styled.g5[id="grid__Col-sc-lmebml-2"]{content:"gPDqCs,jMJBUk,"}/*!sc*/
+.qEIYU{background:whitesmoke;min-height:100vh;height:100%;padding:2em 1em;}/*!sc*/
+data-styled.g6[id="leftNav__LeftNav-sc-1xqizmw-0"]{content:"qEIYU,"}/*!sc*/
+.hfGwbY{background:white;min-height:100vh;}/*!sc*/
+data-styled.g7[id="mainPage__Main-sc-1oj8ual-0"]{content:"hfGwbY,"}/*!sc*/
+.eapHIj{font-weight:800;line-height:30px;color:#000;-webkit-text-decoration:none;text-decoration:none;border-bottom:1px solid #000;padding-bottom:15px;margin-bottom:15px;width:100%;display:block;}/*!sc*/
+data-styled.g8[id="logo__Logo-sc-1cvcglc-0"]{content:"eapHIj,"}/*!sc*/
+.sGrYb{font-weight:800;font-size:28px;color:#000;-webkit-text-decoration:none;text-decoration:none;padding:12px 0px 0 30px;margin:15px 0px 15px;display:block;}/*!sc*/
+data-styled.g10[id="postTitle__PostTitle-sc-1tunsje-0"]{content:"sGrYb,"}/*!sc*/
+.bwaypn{background:white;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid #ccc;padding-bottom:30px;margin-bottom:30px;}/*!sc*/
+.bwaypn pre{margin-top:15px 0px;}/*!sc*/
+.bwaypn table{border-collapse:collapse;}/*!sc*/
+.bwaypn table thead{border-bottom:1px solid #ccc;}/*!sc*/
+.bwaypn table th,.bwaypn table td{text-align:left;padding:10px;}/*!sc*/
+.bwaypn table tr:nth-child(even){background-color:#f2f2f2;}/*!sc*/
+data-styled.g11[id="blogSection__Section-sc-1fn1vbl-0"]{content:"bwaypn,"}/*!sc*/
+.dA-DBGB{-webkit-flex:4;-ms-flex:4;flex:4;padding:0px 15px 15px 30px;}/*!sc*/
+.dA-DBGB h3{margin-top:0;}/*!sc*/
+data-styled.g12[id="leftSection__LeftSection-sc-v7to2y-0"]{content:"dA-DBGB,"}/*!sc*/
+.jsSIUI{-webkit-flex:8;-ms-flex:8;flex:8;padding:15px;}/*!sc*/
+.jsSIUI .CodeMirror{min-height:undefinedpx;}/*!sc*/
+.jsSIUI .CodeMirror .CodeMirror-line{padding-left:15px;}/*!sc*/
+data-styled.g14[id="rightSection__RightSection-sc-ihp0el-0"]{content:"jsSIUI,"}/*!sc*/
+.clCOHA{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}/*!sc*/
+data-styled.g15[id="blogGrid__BlogGrid-sc-eecfdt-0"]{content:"clCOHA,"}/*!sc*/
+html:{line-height:1.15;-webkit-text-size-adjust:100%;}/*!sc*/
+body{margin:0;padding:0;font-family:Open-Sans,Helvetica,Sans-Serif;}/*!sc*/
+main{display:block;}/*!sc*/
+h1{font-size:2em;margin:0.67em 0;}/*!sc*/
+hr{box-sizing:content-box;height:0;overflow:visible;}/*!sc*/
+pre{background:whitesmoke;}/*!sc*/
+a{background-color:transparent;}/*!sc*/
+abbr[title]{border-bottom:none;-webkit-text-decoration:underline,underline dotted;text-decoration:underline,underline dotted;}/*!sc*/
+b,strong{font-weight:bolder;}/*!sc*/
+code,kbd,samp{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+small{font-size:80%;}/*!sc*/
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}/*!sc*/
+sub{bottom:-0.25em;}/*!sc*/
+sup{top:-0.5em;}/*!sc*/
+img{border-style:none;}/*!sc*/
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}/*!sc*/
+button,input{overflow:visible;}/*!sc*/
+button,select{text-transform:none;}/*!sc*/
+button,[type='button'],[type='reset'],[type='submit']{-webkit-appearance:button;}/*!sc*/
+button::-moz-focus-inner,[type='button']::-moz-focus-inner,[type='reset']::-moz-focus-inner,[type='submit']::-moz-focus-inner{border-style:none;padding:0;}/*!sc*/
+button:-moz-focusring,[type='button']:-moz-focusring,[type='reset']:-moz-focusring,[type='submit']:-moz-focusring{outline:1px dotted ButtonText;}/*!sc*/
+fieldset{padding:0.35em 0.75em 0.625em;}/*!sc*/
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}/*!sc*/
+progress{vertical-align:baseline;}/*!sc*/
+textarea{overflow:auto;}/*!sc*/
+[type='checkbox'],[type='radio']{box-sizing:border-box;padding:0;}/*!sc*/
+[type='number']::-webkit-inner-spin-button,[type='number']::-webkit-outer-spin-button{height:auto;}/*!sc*/
+[type='search']{-webkit-appearance:textfield;outline-offset:-2px;}/*!sc*/
+[type='search']::-webkit-search-decoration{-webkit-appearance:none;}/*!sc*/
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}/*!sc*/
+details{display:block;}/*!sc*/
+summary{display:list-item;}/*!sc*/
+template{display:none;}/*!sc*/
+[hidden]{display:none;}/*!sc*/
+data-styled.g16[id="sc-global-lmRrVw1"]{content:"sc-global-lmRrVw1,"}/*!sc*/
+</style></head><body><div id="__next"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="grid__Row-sc-lmebml-1 dMwDvt"><div size="1" class="grid__Col-sc-lmebml-2 gPDqCs"><div class="leftNav__LeftNav-sc-1xqizmw-0 qEIYU"><a href="/" class="logo__Logo-sc-1cvcglc-0 eapHIj">Exploratorium</a><input placeholder="Search" class="searchBar__SearchBar-sc-12i2ryj-0 biWZdL"/><hr/></div></div><div size="10" class="grid__Col-sc-lmebml-2 jMJBUk"><div class="mainPage__Main-sc-1oj8ual-0 hfGwbY"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="postTitle__PostTitle-sc-1tunsje-0 sGrYb">JS Doubly linked List</div><div class="blogGrid__BlogGrid-sc-eecfdt-0 clCOHA"><div class="blogSection__Section-sc-1fn1vbl-0 bwaypn"><div size="4" class="leftSection__LeftSection-sc-v7to2y-0 dA-DBGB"><h2>Introduction</h2><p>  Doubly Linked Lists are almost identical to singly linked lists. The only main difference here is that we take up more memory
+as we need to reference not only the next node but the previous node that comes before it. </p><p>  I am going to keep this as short as possible because you can reference the singly linked list page <a href="/articles/linkedlist">here</a></p><p>  This creats a circle reference where each node references the prior and so fourth. The main benefit of this is being able to traverse from either direction. </p></div><div size="8" class="rightSection__RightSection-sc-ihp0el-0 jsSIUI"><h2>My Headline</h2><pre><code>            Head Node                            Tail Node
+        ┌───────────┐      ┌───────────┐     ┌───────────┐
+        │           │      │           │     │           │
+        │ Value: A  │      │ Value: B  │     │ Value: C  │
+        │ Next:─────┼──────┤ Next:─────┼─────┤ Next:─────┼─► NULL
+        │           │      │           │     │           │
+ NULL ◄─┼┐Prev◄─────┼──────┼┐Prev ◄────┼─────┼┐Prev      │
+        └┴──────────┘      └┴──────────┘     └┴──────────┘
+  
+</code></pre></div></div><div class="blogSection__Section-sc-1fn1vbl-0 bwaypn"><div size="4" class="leftSection__LeftSection-sc-v7to2y-0 dA-DBGB"><h1>Implementation</h1><p>  ** NOTE: I will not console.log this here because of the circular nature of this data structure just trust that this will work.</p><h2>Utility class</h2><ol><li>Similar to the original node of a linked list. we just need to add a prev property.</li></ol><h2>Constructor</h2><ol><li>Takes in a value for the head create a new node.</li><li>Since this is the first node, the head is also the tail.</li><li>Initialize the length to 1.</li></ol><h2>Append</h2><ol><li>Create a new node instance. </li><li>Go to the current tail of the linked list and capture that value.</li><li>Assign the captured tail .next property to the new node that was created.</li><li>Assign the new Node&#x27;s .prev value to the captured tail node.</li><li>Assign this.tail to the new Node.</li></ol><h2>Prepend</h2><ol><li>Create a new Node instance</li><li>Assign the new Nodes .next value to the currentHead.</li><li>Assign the currentHeads .prev value to the new node created.</li><li>Assign the head to the new node created.</li><li>profit.</li></ol><h2>Insert</h2><ol><li>Create a new Node.</li><li>Find and capture the leader (index - 1) by using the traverseToIndex ( index - 1);</li><li>Capture the follower by referencing the leader.next. this is where we want to insert.</li><li>Set the new Node.prev to the leader</li><li>Set the leader.next to the new Node.</li><li>Set the new Node.next to the follower.</li><li>Set the follower.prev to the new node</li><li>all linked back up :)</li></ol></div><div size="8" class="rightSection__RightSection-sc-ihp0el-0 jsSIUI"></div></div></div></div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/articles/doublylinkedlist","query":{},"buildId":"GBZn7xTOxDazcFSNPerfi","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
