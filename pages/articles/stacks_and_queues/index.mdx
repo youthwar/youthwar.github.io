@@ -1,0 +1,100 @@
+import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
+import Editor from '@components/editor';
+import Stack from '@codeSnippets/stack';
+import Queue from '@codeSnippets/queue';
+export const meta = {
+  title: 'JS Stacks and Queues',
+  description: 'A comprehensive stack and queue guide',
+  date: 'Oct 15, 2021',
+  categories: ['js', 'datastructure'],  
+  published: true
+}
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
+
+<Section>
+
+  <LeftSection size={4}>
+
+  ## Introduction
+
+  Both of these datastructes are both linear. Linear datastructures allow us to traverse them one by one.
+  These are very similar to arrays or linked list but these are more controlled because we have less methods.
+
+  Either of the datastructures are implementable with arrays. However using this is up to you. 
+
+  Using an array for a stack is fine. For a queue this might not be ideal because of the array shifting would actually be worst in terms of time complexity.
+
+  ### Stacks
+
+  #### **LIFO** (Last In First Out)
+
+  These are useful when you want to find the last item in the strutucre.
+  Call Stacks
+  Browser History
+  Edit / Undo 
+
+  There are three main methods:
+  1. lookup
+  2. pop 
+  3. push
+  4. peek
+
+
+  ### Queues 
+
+  #### **FIFO** (First In First Out)
+
+  Use Cases:
+  Wait list 
+  Restaurant apps
+  Uber / Lyft
+  
+  
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  | Methods | Description                                                  | Big O time complexity |
+  | ------- | ------------------------------------------------------------ | --------------------- |
+  | pop     | Retrieve the next item from either data structure            | O(1)                  |
+  | push    | Adds an item to to the next position of either data structure | O(1)                  |
+  | peek    | Grabs the next value in either order for either datastructure | O(1)                  |
+
+
+  
+  </RightSection>
+
+</Section>
+
+<Section>
+
+  <LeftSection size={4}>
+
+  # Stack Implementation
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  <Editor code={Stack} height="980px" />
+
+  </RightSection>
+
+</Section>
+
+<Section>
+
+  <LeftSection size={4}>
+
+  # Queue Implementation
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  <Editor code={Queue} height="980px" />
+
+  </RightSection>
+
+</Section>
