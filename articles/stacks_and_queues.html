@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charSet="utf-8"/><meta name="Description" content="Creating and traversal methods for Binary Trees"/><title>Exploratorium: JS Binary Search Tree Guide</title><meta name="next-head-count" content="4"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script><script src="/_next/static/chunks/webpack-4987d600c581d75c7fd7.js" defer=""></script><script src="/_next/static/chunks/framework-717d42ae9e172961f2a5.js" defer=""></script><script src="/_next/static/chunks/main-1f2c591c5d3bfcfc95e6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-b1820ebec9f770023eb6.js" defer=""></script><script src="/_next/static/chunks/pages/articles/binarytree-765ecac2437b7108b666.js" defer=""></script><script src="/_next/static/zMrFWW2AMlP6BD8ME8O1e/_buildManifest.js" defer=""></script><script src="/_next/static/zMrFWW2AMlP6BD8ME8O1e/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="5.3.1">.biWZdL{background:none;width:100%;border:none;padding:7px;margin-top:20px;}/*!sc*/
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charSet="utf-8"/><meta name="Description" content="A comprehensive stack and queue guide"/><title>Exploratorium: JS Stacks and Queues</title><meta name="next-head-count" content="4"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script><script src="/_next/static/chunks/webpack-4987d600c581d75c7fd7.js" defer=""></script><script src="/_next/static/chunks/framework-717d42ae9e172961f2a5.js" defer=""></script><script src="/_next/static/chunks/main-1f2c591c5d3bfcfc95e6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-b1820ebec9f770023eb6.js" defer=""></script><script src="/_next/static/chunks/pages/articles/stacks_and_queues-3419571d315440c0a2e6.js" defer=""></script><script src="/_next/static/zMrFWW2AMlP6BD8ME8O1e/_buildManifest.js" defer=""></script><script src="/_next/static/zMrFWW2AMlP6BD8ME8O1e/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="5.3.1">.biWZdL{background:none;width:100%;border:none;padding:7px;margin-top:20px;}/*!sc*/
 .biWZdL:focus{border:none;outline:none;}/*!sc*/
 data-styled.g1[id="searchBar__SearchBar-sc-12i2ryj-0"]{content:"biWZdL,"}/*!sc*/
 .dMwDvt{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
@@ -24,10 +24,10 @@ data-styled.g11[id="blogSection__Section-sc-1fn1vbl-0"]{content:"bwaypn,"}/*!sc*
 .dA-DBGB{-webkit-flex:4;-ms-flex:4;flex:4;padding:0px 15px 15px 30px;}/*!sc*/
 .dA-DBGB h3{margin-top:0;}/*!sc*/
 data-styled.g12[id="leftSection__LeftSection-sc-v7to2y-0"]{content:"dA-DBGB,"}/*!sc*/
-.sjuVQ{-webkit-flex:8;-ms-flex:8;flex:8;padding:15px;}/*!sc*/
-.sjuVQ .CodeMirror{min-height:600px;}/*!sc*/
-.sjuVQ .CodeMirror .CodeMirror-line{padding-left:15px;}/*!sc*/
-data-styled.g14[id="rightSection__RightSection-sc-ihp0el-0"]{content:"sjuVQ,"}/*!sc*/
+.jsSIUI{-webkit-flex:8;-ms-flex:8;flex:8;padding:15px;}/*!sc*/
+.jsSIUI .CodeMirror{min-height:undefinedpx;}/*!sc*/
+.jsSIUI .CodeMirror .CodeMirror-line{padding-left:15px;}/*!sc*/
+data-styled.g14[id="rightSection__RightSection-sc-ihp0el-0"]{content:"jsSIUI,"}/*!sc*/
 .clCOHA{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}/*!sc*/
 data-styled.g15[id="blogGrid__BlogGrid-sc-eecfdt-0"]{content:"clCOHA,"}/*!sc*/
 html:{line-height:1.15;-webkit-text-size-adjust:100%;}/*!sc*/
@@ -65,19 +65,11 @@ summary{display:list-item;}/*!sc*/
 template{display:none;}/*!sc*/
 [hidden]{display:none;}/*!sc*/
 data-styled.g16[id="sc-global-lmRrVw1"]{content:"sc-global-lmRrVw1,"}/*!sc*/
-</style></head><body><div id="__next"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="grid__Row-sc-lmebml-1 dMwDvt"><div size="1" class="grid__Col-sc-lmebml-2 gPDqCs"><div class="leftNav__LeftNav-sc-1xqizmw-0 qEIYU"><a href="/" class="logo__Logo-sc-1cvcglc-0 eapHIj">Exploratorium</a><input placeholder="Search" class="searchBar__SearchBar-sc-12i2ryj-0 biWZdL"/><hr/></div></div><div size="10" class="grid__Col-sc-lmebml-2 jMJBUk"><div class="mainPage__Main-sc-1oj8ual-0 hfGwbY"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="postTitle__PostTitle-sc-1tunsje-0 sGrYb">JS Binary Search Tree Guide</div><div class="blogGrid__BlogGrid-sc-eecfdt-0 clCOHA"><div class="blogSection__Section-sc-1fn1vbl-0 bwaypn"><div size="4" class="leftSection__LeftSection-sc-v7to2y-0 dA-DBGB"><h3>Generic Binary Search Tree Definition</h3><pre><code>                        ┌────┐          Depth │
- Level 0                │ 23 │                │
-                        └──┬─┘                │
-                           │                  │
-                ┌────┐     │    ┌────┐        │
- Level 1        │ 11 │◄────┴───►│ 32 │        │
-                └──┬─┘          └──┬─┘        │
-                   │               │          │
-           ┌────┐  │      ┌────┐   │   ┌────┐ │
- Level 2   │  8 │◄─┘      │ 13 │◄──┴──►│ 52 │ │
-           └────┘         └────┘       └────┘ ▼
-            ◄────────────────────────────────►
-            Breadth
-
-
-</code></pre><p>  Above is an accurate representation of a binary search tree. </p><br/>Theres a few things we can point out the above:<ol><li>Every value that is less then the parent head is to the left.</li><li>Every value greater than the head is to the right.</li><li>This tree has a depth of 3 levels</li><li>This tree is not balanced because at level 2 there is no value to the right of 8.<br/></li></ol><p>  In our code example we can see a few items here:</p><ol><li>We have an auxiliary function that returns our basic instace of a node or you can view it as just the lowest leaf.</li><li></li></ol></div><div size="8" height="600" class="rightSection__RightSection-sc-ihp0el-0 sjuVQ"></div></div></div></div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/articles/binarytree","query":{},"buildId":"zMrFWW2AMlP6BD8ME8O1e","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+</style></head><body><div id="__next"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="grid__Row-sc-lmebml-1 dMwDvt"><div size="1" class="grid__Col-sc-lmebml-2 gPDqCs"><div class="leftNav__LeftNav-sc-1xqizmw-0 qEIYU"><a href="/" class="logo__Logo-sc-1cvcglc-0 eapHIj">Exploratorium</a><input placeholder="Search" class="searchBar__SearchBar-sc-12i2ryj-0 biWZdL"/><hr/></div></div><div size="10" class="grid__Col-sc-lmebml-2 jMJBUk"><div class="mainPage__Main-sc-1oj8ual-0 hfGwbY"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="postTitle__PostTitle-sc-1tunsje-0 sGrYb">JS Stacks and Queues</div><div class="blogGrid__BlogGrid-sc-eecfdt-0 clCOHA"><div class="blogSection__Section-sc-1fn1vbl-0 bwaypn"><div size="4" class="leftSection__LeftSection-sc-v7to2y-0 dA-DBGB"><h2>Introduction</h2><p>  Both of these datastructes are both linear. Linear datastructures allow us to traverse them one by one.
+These are very similar to arrays or linked list but these are more controlled because we have less methods.</p><p>  Either of the datastructures are implementable with arrays. However using this is up to you. </p><p>  Using an array for a stack is fine. For a queue this might not be ideal because of the array shifting would actually be worst in terms of time complexity.</p><h3>Stacks</h3><h4><strong>LIFO</strong> (Last In First Out)</h4><p>  These are useful when you want to find the last item in the strutucre.
+Call Stacks
+Browser History
+Edit / Undo </p><p>  There are three main methods:</p><ol><li>lookup</li><li>pop </li><li>push</li><li>peek</li></ol><h3>Queues</h3><h4><strong>FIFO</strong> (First In First Out)</h4><p>  Use Cases:
+Wait list
+Restaurant apps
+Uber / Lyft</p></div><div size="8" class="rightSection__RightSection-sc-ihp0el-0 jsSIUI"><table><thead><tr><th>Methods</th><th>Description</th><th>Big O time complexity</th></tr></thead><tbody><tr><td>pop</td><td>Retrieve the next item from either data structure</td><td>O(1)</td></tr><tr><td>push</td><td>Adds an item to to the next position of either data structure</td><td>O(1)</td></tr><tr><td>peek</td><td>Grabs the next value in either order for either datastructure</td><td>O(1)</td></tr></tbody></table></div></div><div class="blogSection__Section-sc-1fn1vbl-0 bwaypn"><div size="4" class="leftSection__LeftSection-sc-v7to2y-0 dA-DBGB"><h1>Stack Implementation</h1></div><div size="8" class="rightSection__RightSection-sc-ihp0el-0 jsSIUI"></div></div><div class="blogSection__Section-sc-1fn1vbl-0 bwaypn"><div size="4" class="leftSection__LeftSection-sc-v7to2y-0 dA-DBGB"><h1>Queue Implementation</h1></div><div size="8" class="rightSection__RightSection-sc-ihp0el-0 jsSIUI"></div></div></div></div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/articles/stacks_and_queues","query":{},"buildId":"zMrFWW2AMlP6BD8ME8O1e","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
