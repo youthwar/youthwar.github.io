@@ -3,7 +3,11 @@ function Logger() {
   this.original = console;
   console = this;
   this.log = (args) => {
-    this.queue.push(JSON.stringify(args));
+    try {
+      this.queue.push(JSON.stringify(args));
+    } catch(e) {
+      console.log(e)
+    }
     this.original.log(args);
   };
   this.warn = this.original.warn;

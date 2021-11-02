@@ -8,13 +8,13 @@ const linkedList = {
       previous: {
         value: 'a',
         previous: null
-      }
+      },
       next: {
         value: 'c',
         previous: {
           value: 'b',
           next: 'c'
-        }
+        },
         next: null
       }
     }
