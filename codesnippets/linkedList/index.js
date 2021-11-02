@@ -1,4 +1,4 @@
-export default `
+const example = `
 const linkedList = {
   head: {
     value: 'a',
@@ -14,3 +14,5 @@ const linkedList = {
 
 console.log(linkedList);
 `;
+
+export default example;

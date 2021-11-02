@@ -5,5 +5,9 @@ export const LeftSection = styled.div({
   padding: '0px 15px 15px 30px',
   h3: {
     marginTop: '0'
+  },
+
+  'pre': {
+    padding: '15px'
   }
 });

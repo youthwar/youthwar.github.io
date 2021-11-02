@@ -15,7 +15,7 @@ const CodeEditor = ({ code, height, editable }: { code: string; editable?: boole
   const runCode = () => {
     // @ts-ignore
     const newFNSTR = `
-      const logger = ${Logger}; 
+      const logger = ${Logger};
       const newConsole = new logger();
       ${code};
       return newConsole.queue;
