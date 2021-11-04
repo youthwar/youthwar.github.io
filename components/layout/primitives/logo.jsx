@@ -10,5 +10,7 @@ export const Logo = styled.a({
   marginBottom: '15px',
   width: '100%',
   display: 'block',
-  
+  '@media (max-width: 1025px)': {
+    fontSize: '1.8em'
+  }
 });

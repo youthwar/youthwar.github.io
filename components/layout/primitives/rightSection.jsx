@@ -12,7 +12,11 @@ export const RightSection = styled.div({
 
   '@media (max-width: 1025px)': {
     paddingLeft: 30,
-    paddingright: 30
+    paddingright: 30,
+    'pre': {
+      overflow: 'scroll',
+      padding: 30
+    }
   }
 
   
