@@ -8,6 +8,9 @@ export const LeftSection = styled.div({
   },
 
   'pre': {
-    padding: '15px'
+    padding: '15px',
+    '@media (max-width: 1025px)': {
+      overflow: 'scroll'
+    }
   }
 });

@@ -6,9 +6,11 @@ export const Logo = styled.a({
   color: '#000',
   textDecoration: 'none',
   borderBottom: '1px solid #000',
-  paddingBottom: '15px',
+  paddingBottom: '36px',
   marginBottom: '15px',
   width: '100%',
   display: 'block',
-  
+  '@media (max-width: 1025px)': {
+    fontSize: '1.8em'
+  }
 });
