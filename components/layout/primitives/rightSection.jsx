@@ -9,5 +9,11 @@ export const RightSection = styled.div({
       paddingLeft: '15px'
     }
   },
+
+  '@media (max-width: 1025px)': {
+    paddingLeft: 30,
+    paddingright: 30
+  }
+
   
 })
