@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: yarn
-      - run: yarn lint
-      - run: yarn tsc
-      - run: yarn build
+      - run: yarn workspace @yw/web install 
+      - run: yarn workspace @yw/web lint
+      - run: yarn workspace @yw/web tsc
+      - run: yarn workspace @yw/web build

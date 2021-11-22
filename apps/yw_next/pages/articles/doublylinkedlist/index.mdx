@@ -1,0 +1,105 @@
+import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
+import Editor from '@components/editor';
+import DoublyLinkedList from '@codeSnippets/doublylinkedlist';
+import Implementation from '@codeSnippets/doublylinkedlist/implementation';
+
+export const meta = {
+  title: 'JS Doubly linked List',
+  description: 'a full list of the everything a post can have.',
+  date: 'Aug 04, 2020',
+  categories: ['js', 'datastructures'],  
+  published: true
+}
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
+
+<Section>
+
+  <LeftSection size={4}>
+
+  ## Introduction 
+
+  Doubly Linked Lists are almost identical to singly linked lists. The only main difference here is that we take up more memory 
+  as we need to reference not only the next node but the previous node that comes before it. 
+
+  I am going to keep this as short as possible because you can reference the singly linked list page [here](/articles/linkedlist)
+
+  This creats a circle reference where each node references the prior and so fourth. The main benefit of this is being able to traverse from either direction. 
+
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  ## My Headline
+
+                Head Node                            Tail Node
+            ┌───────────┐      ┌───────────┐     ┌───────────┐
+            │           │      │           │     │           │
+            │ Value: A  │      │ Value: B  │     │ Value: C  │
+            │ Next:─────┼──────┤ Next:─────┼─────┤ Next:─────┼─► NULL
+            │           │      │           │     │           │
+     NULL ◄─┼┐Prev◄─────┼──────┼┐Prev ◄────┼─────┼┐Prev      │
+            └┴──────────┘      └┴──────────┘     └┴──────────┘
+      
+
+  <Editor code={DoublyLinkedList} height={'400px'}/>
+
+  </RightSection>
+
+</Section>
+
+
+<Section>
+
+  <LeftSection size={4}>
+
+  # Implementation
+  ** NOTE: I will not console.log this here because of the circular nature of this data structure just trust that this will work.
+  
+  ## Utility class
+  1. Similar to the original node of a linked list. we just need to add a prev property.
+
+
+  ## Constructor
+  1. Takes in a value for the head create a new node.
+  2. Since this is the first node, the head is also the tail.
+  3. Initialize the length to 1.
+  
+
+  ## Append
+  1. Create a new node instance. 
+  2. Go to the current tail of the linked list and capture that value.
+  3. Assign the captured tail .next property to the new node that was created.
+  4. Assign the new Node's .prev value to the captured tail node.
+  5. Assign this.tail to the new Node.
+
+
+  ## Prepend
+  1. Create a new Node instance
+  2. Assign the new Nodes .next value to the currentHead.
+  3. Assign the currentHeads .prev value to the new node created.
+  4. Assign the head to the new node created.
+  5. profit.
+
+
+  ## Insert
+  1. Create a new Node.
+  2. Find and capture the leader (index - 1) by using the traverseToIndex ( index - 1);
+  3. Capture the follower by referencing the leader.next. this is where we want to insert.
+  3. Set the new Node.prev to the leader
+  4. Set the leader.next to the new Node.
+  5. Set the new Node.next to the follower.
+  6. Set the follower.prev to the new node
+  7. all linked back up :)
+  
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  <Editor code={Implementation} height={'1000px'} />
+  
+  </RightSection>
+
+</Section>
