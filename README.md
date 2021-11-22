@@ -23,3 +23,9 @@
                                                                                                                                         
 ```                                                     
                                                                                              
+# Getting Started
+1. Clone this repository
+2. run ``` yarn ``` at the root
+
+## Creating a new article: 
+From the root of this project run ```yarn workspace @yw/cli new``` and fill out the questionaire. 
