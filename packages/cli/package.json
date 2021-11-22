@@ -1,0 +1,14 @@
+{
+  "name": "@yw/cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "commander": "^8.3.0",
+    "inquirer": "^8.2.0"
+  },
+  "scripts": {
+    "new": "node ./index.js"
+  }
+}

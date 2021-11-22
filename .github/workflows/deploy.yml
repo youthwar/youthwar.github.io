@@ -17,14 +17,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - run: yarn
-      - run: yarn lint
-      - run: yarn tsc
-      - run: yarn build
-      - run: yarn export
+      - run: yarn workspace @yw/web install 
+      - run: yarn workspace @yw/web lint
+      - run: yarn workspace @yw/web tsc
+      - run: yarn workspace @yw/web build
+      - run: yarn workspace @yw/web export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
-          publish_dir: ./out
+          publish_dir: ./apps/yw_next/out

@@ -1,0 +1,102 @@
+import { BlogLayout, CenterSection, LeftSection, RightSection, Section } from '@components/layout';
+import exampleArray from '@codeSnippets/array';
+import arrayImplementation from '@codeSnippets/array/implementation';
+import Editor from '@components/editor';
+
+export const meta = {
+  title: 'JS Arrays',
+  description: 'A comprehensive look into the data structure arrays.',
+  date: 'October 11, 2021',
+  categories: ['js', 'datastructures'],  
+  published: true
+}
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>;
+
+<Section>
+
+  <LeftSection size={4}>
+
+  ## Introduction
+
+  Arrays are a datastructure that stores data sequentially (one after another). Arrays are iterable, meaning that you can start from any position or index and move in one direction or another.
+
+
+  In most programming languages there are two different types of arrays. Static | Dynamic.
+
+
+  In Javascript we can actually instantiate a new array with the size of array that we would want. In the example we can see how we can utilize this.
+
+  Tips:
+  1. Any string question in an interview, always treat it as an array.
+
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  ## Array Example
+
+  <Editor code={exampleArray} height="400px"/>
+  
+  </RightSection>
+
+</Section>
+
+<Section>
+  
+  <CenterSection>
+
+  ### Basic Methods on an Array
+
+  | Method | Description                                                  | Big O time complexity                  |
+  | ----------- | ------------------------------------------------------------ | -------------------------------------- |
+  | push        | adds element to the end of an array                          | O(1)                                   |
+  | pop         | removes the item at the end of an array and returns it       | O(1)                                   |
+  | unshift     | adds an item at the begining of an array                     | O(n) // the length of the array        |
+  | shift       | removes the item at the beginning of an array and returns it | O(n) // worst case length of the array |
+  | splice      | removes an item at a given index and also gives you the oportunity to delete an item | O(n) // worst case length of the array |
+  
+  </CenterSection>
+
+</Section>
+
+<Section>
+
+  <LeftSection size={4}>
+
+  # Implementation
+
+  This is an example of how we can implement an array from scratch. 
+  I am not saying you should do this but this is how one could be done if we wanted to.
+
+  Here we create a class where we store our items in an array. We will use a js object with the "indexes" as keys.
+  Lets break down all of our methods.
+
+  ## Push Method:
+  1. Add a key of the current length; we start at 0 so our first item will be at 0 and we add the item as the value.
+  2. Increase the length by one so that the next item is going at the correct index.
+
+
+  ## Pop Method:
+  1. Retrieve the item at the last index, in our case we are just going to get the item at the current length - 1.
+  2. We want to delete the last item by just calling the delete function on an object with the current key.
+  3. Decrease the current length by one and return the item.
+  
+
+  ## Delete method:
+  1. We need to create a utility function that allows us to shift every item starting at the index we want to delete.
+  2. This shift function takes the index you want to delete, loops through the keys in our object, and assigns every item to the previous index (because we are deleting one it needs to shift).
+  3. Once we have shifted all the values, we need to remove the last one since we have shifted everything one over. 
+  4. Finally we just need to decrement the length by once since we have deleted one item.
+
+
+  </LeftSection>
+
+  <RightSection size={8}>
+
+  <Editor code={arrayImplementation} height={'870px'}/>  
+
+  </RightSection>
+
+</Section>
