@@ -11,6 +11,7 @@ export type Article = {
   module: {
     meta: {
       title: string;
+      date: Date;
       description: string;
       categories: [keyof ArticleCategories];
       published: boolean;
