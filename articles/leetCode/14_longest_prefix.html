@@ -1,42 +1,44 @@
-<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charSet="utf-8"/><meta name="Description" content="Write a function to find the longest common prefix string amongst an array of strings."/><title>Exploratorium: LeetCode #14</title><meta name="next-head-count" content="4"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script><script src="/_next/static/chunks/webpack-53f682b2b83e522682a0.js" defer=""></script><script src="/_next/static/chunks/framework-717d42ae9e172961f2a5.js" defer=""></script><script src="/_next/static/chunks/main-1f2c591c5d3bfcfc95e6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d89d4185468dc1322c43.js" defer=""></script><script src="/_next/static/chunks/pages/articles/leetCode/14_longest_prefix-c9e690b6d033e2d9af08.js" defer=""></script><script src="/_next/static/bH7k2S6y1DlKQ18v90cse/_buildManifest.js" defer=""></script><script src="/_next/static/bH7k2S6y1DlKQ18v90cse/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="5.3.1">.biWZdL{background:none;width:100%;border:none;padding:7px;margin-top:20px;}/*!sc*/
-.biWZdL:focus{border:none;outline:none;}/*!sc*/
-data-styled.g1[id="searchBar__SearchBar-sc-12i2ryj-0"]{content:"biWZdL,"}/*!sc*/
-.cimImx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
-@media (max-width:1025px){.cimImx{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}/*!sc*/
-data-styled.g4[id="grid__Row-sc-lmebml-1"]{content:"cimImx,"}/*!sc*/
-.gPDqCs{-webkit-flex:1;-ms-flex:1;flex:1;}/*!sc*/
-.jMJBUk{-webkit-flex:10;-ms-flex:10;flex:10;}/*!sc*/
-data-styled.g5[id="grid__Col-sc-lmebml-2"]{content:"gPDqCs,jMJBUk,"}/*!sc*/
-.djHzLG{background:whitesmoke;min-height:100vh;height:100%;padding:2em 1em;}/*!sc*/
-@media (max-width:1025px){.djHzLG{height:35px;min-height:35px;padding-left:30px;}}/*!sc*/
-data-styled.g6[id="leftNav__LeftNav-sc-1xqizmw-0"]{content:"djHzLG,"}/*!sc*/
-.hfGwbY{background:white;min-height:100vh;}/*!sc*/
-data-styled.g7[id="mainPage__Main-sc-1oj8ual-0"]{content:"hfGwbY,"}/*!sc*/
-.cNHrqT{font-weight:800;line-height:30px;color:#000;-webkit-text-decoration:none;text-decoration:none;border-bottom:1px solid #000;padding-bottom:36px;margin-bottom:15px;width:100%;display:block;}/*!sc*/
-@media (max-width:1025px){.cNHrqT{font-size:1.8em;}}/*!sc*/
-data-styled.g8[id="logo__Logo-sc-1cvcglc-0"]{content:"cNHrqT,"}/*!sc*/
-.zydMX{font-weight:800;font-size:1.5em;color:#000;-webkit-text-decoration:none;text-decoration:none;padding:12px 0px 0 30px;margin:15px 0px 15px;display:block;}/*!sc*/
-data-styled.g10[id="postTitle__PostTitle-sc-1tunsje-0"]{content:"zydMX,"}/*!sc*/
-.qNLEX{background:white;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid #ccc;padding-bottom:30px;margin-bottom:30px;}/*!sc*/
-.qNLEX pre{margin-top:15px 0px;}/*!sc*/
-.qNLEX table{border-collapse:collapse;}/*!sc*/
-.qNLEX table thead{border-bottom:1px solid #ccc;}/*!sc*/
-.qNLEX table th,.qNLEX table td{text-align:left;padding:10px;}/*!sc*/
-.qNLEX table tr:nth-child(even){background-color:#f2f2f2;}/*!sc*/
-@media (max-width:1025px){.qNLEX{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}/*!sc*/
-data-styled.g11[id="blogSection__Section-sc-1fn1vbl-0"]{content:"qNLEX,"}/*!sc*/
-.dA-DBGB{-webkit-flex:4;-ms-flex:4;flex:4;padding:0px 15px 15px 30px;}/*!sc*/
-.dA-DBGB h3{margin-top:0;}/*!sc*/
-.dA-DBGB pre{padding:15px;}/*!sc*/
-@media (max-width:1025px){.dA-DBGB pre{overflow:scroll;}}/*!sc*/
-data-styled.g12[id="leftSection__LeftSection-sc-v7to2y-0"]{content:"dA-DBGB,"}/*!sc*/
-.sjvaR{-webkit-flex:8;-ms-flex:8;flex:8;padding:15px;}/*!sc*/
-.sjvaR .CodeMirror{min-height:380px;}/*!sc*/
-.sjvaR .CodeMirror .CodeMirror-line{padding-left:15px;}/*!sc*/
-@media (max-width:1025px){.sjvaR{padding-left:30px;paddingright:30px;}.sjvaR pre{overflow:scroll;padding:30px;}}/*!sc*/
-data-styled.g14[id="rightSection__RightSection-sc-ihp0el-0"]{content:"sjvaR,"}/*!sc*/
-.clCOHA{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}/*!sc*/
-data-styled.g15[id="blogGrid__BlogGrid-sc-eecfdt-0"]{content:"clCOHA,"}/*!sc*/
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"/><meta charSet="utf-8"/><meta name="Description" content="Write a function to find the longest common prefix string amongst an array of strings."/><title>Exploratorium: LeetCode #14</title><meta name="next-head-count" content="4"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script><script src="/_next/static/chunks/webpack-e4d27c79964130507f97.js" defer=""></script><script src="/_next/static/chunks/framework-6c1df9343454c31afbdc.js" defer=""></script><script src="/_next/static/chunks/main-3046b4382359db29bdc0.js" defer=""></script><script src="/_next/static/chunks/pages/_app-a266c6f4cf229d8018c0.js" defer=""></script><script src="/_next/static/chunks/pages/articles/leetCode/14_longest_prefix-ed3f7fb1e9bf608b8ef1.js" defer=""></script><script src="/_next/static/dEVFsdvSnaocnnFjkO9yP/_buildManifest.js" defer=""></script><script src="/_next/static/dEVFsdvSnaocnnFjkO9yP/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="5.3.3">.kciVLj{background:none;width:100%;border:none;padding:7px;margin-top:20px;}/*!sc*/
+.kciVLj:focus{border:none;outline:none;}/*!sc*/
+data-styled.g1[id="searchBar__SearchBar-sc-oz04ga-0"]{content:"kciVLj,"}/*!sc*/
+.biWiqL{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}/*!sc*/
+@media (max-width:1025px){.biWiqL{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}/*!sc*/
+data-styled.g4[id="grid__Row-sc-nn7lso-1"]{content:"biWiqL,"}/*!sc*/
+.dEpcAy{-webkit-flex:1;-ms-flex:1;flex:1;}/*!sc*/
+.fntOaq{-webkit-flex:10;-ms-flex:10;flex:10;}/*!sc*/
+data-styled.g5[id="grid__Col-sc-nn7lso-2"]{content:"dEpcAy,fntOaq,"}/*!sc*/
+.bRLSAi{background:whitesmoke;min-height:100vh;height:100%;padding:2em 1em;}/*!sc*/
+@media (max-width:1025px){.bRLSAi{height:35px;min-height:35px;padding:1em;}}/*!sc*/
+data-styled.g6[id="leftNav__LeftNav-sc-1yp0y0r-0"]{content:"bRLSAi,"}/*!sc*/
+.ezyWNj{background:white;min-height:100vh;}/*!sc*/
+data-styled.g7[id="mainPage__Main-sc-1s4f2ts-0"]{content:"ezyWNj,"}/*!sc*/
+.kAXOGy{font-weight:800;line-height:30px;color:#000;-webkit-text-decoration:none;text-decoration:none;border-bottom:1px solid #000;padding-bottom:36px;margin-bottom:15px;width:100%;display:block;}/*!sc*/
+@media (max-width:1025px){.kAXOGy{font-size:1em;}}/*!sc*/
+data-styled.g8[id="logo__Logo-sc-oopcgj-0"]{content:"kAXOGy,"}/*!sc*/
+.kILAip{font-weight:800;font-size:1.5em;color:#000;-webkit-text-decoration:none;text-decoration:none;padding:12px 0px 0 30px;margin:15px 0px 15px;display:block;}/*!sc*/
+@media (max-width:1025px){.kILAip{padding:.7em;}}/*!sc*/
+data-styled.g10[id="postTitle__PostTitle-sc-3fkvn9-0"]{content:"kILAip,"}/*!sc*/
+.bOwJbG{background:white;width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:1px solid #ccc;padding-bottom:30px;margin-bottom:30px;}/*!sc*/
+.bOwJbG pre{margin-top:15px 0px;}/*!sc*/
+.bOwJbG table{border-collapse:collapse;}/*!sc*/
+.bOwJbG table thead{border-bottom:1px solid #ccc;}/*!sc*/
+.bOwJbG table th,.bOwJbG table td{text-align:left;padding:10px;}/*!sc*/
+.bOwJbG table tr:nth-child(even){background-color:#f2f2f2;}/*!sc*/
+@media (max-width:1025px){.bOwJbG{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}}/*!sc*/
+data-styled.g11[id="blogSection__Section-sc-19valth-0"]{content:"bOwJbG,"}/*!sc*/
+.kqXVQf{-webkit-flex:4;-ms-flex:4;flex:4;padding:0px 30px 15px 30px;}/*!sc*/
+.kqXVQf h3{margin-top:0;}/*!sc*/
+.kqXVQf pre{padding:15px;}/*!sc*/
+@media (max-width:1025px){.kqXVQf pre{overflow:scroll;}}/*!sc*/
+@media (max-width:1025px){.kqXVQf{padding:1em;}}/*!sc*/
+data-styled.g12[id="leftSection__LeftSection-sc-5s7t33-0"]{content:"kqXVQf,"}/*!sc*/
+.hoFRkr{-webkit-flex:8;-ms-flex:8;flex:8;padding:15px;}/*!sc*/
+.hoFRkr .CodeMirror{min-height:380px;}/*!sc*/
+.hoFRkr .CodeMirror .CodeMirror-line{padding-left:15px;}/*!sc*/
+@media (max-width:1025px){.hoFRkr{padding:1em;}.hoFRkr pre{overflow:scroll;padding:1em;}}/*!sc*/
+data-styled.g14[id="rightSection__RightSection-sc-1nzssd9-0"]{content:"hoFRkr,"}/*!sc*/
+.fMgZbi{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}/*!sc*/
+data-styled.g15[id="blogGrid__BlogGrid-sc-1amdm54-0"]{content:"fMgZbi,"}/*!sc*/
 html:{line-height:1.15;-webkit-text-size-adjust:100%;}/*!sc*/
 body{margin:0;padding:0;font-family:Open-Sans,Helvetica,Sans-Serif;}/*!sc*/
 main{display:block;}/*!sc*/
@@ -72,7 +74,7 @@ summary{display:list-item;}/*!sc*/
 template{display:none;}/*!sc*/
 [hidden]{display:none;}/*!sc*/
 data-styled.g16[id="sc-global-lmRrVw1"]{content:"sc-global-lmRrVw1,"}/*!sc*/
-</style></head><body><div id="__next"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="grid__Row-sc-lmebml-1 cimImx"><div size="1" class="grid__Col-sc-lmebml-2 gPDqCs"><div class="leftNav__LeftNav-sc-1xqizmw-0 djHzLG"><a href="/" class="logo__Logo-sc-1cvcglc-0 cNHrqT">Exploratorium</a><input placeholder="Search" class="searchBar__SearchBar-sc-12i2ryj-0 biWZdL"/><hr/></div></div><div size="10" class="grid__Col-sc-lmebml-2 jMJBUk"><div class="mainPage__Main-sc-1oj8ual-0 hfGwbY"><div class="grid__Grid-sc-lmebml-0 bSaqYq"><div class="postTitle__PostTitle-sc-1tunsje-0 zydMX">LeetCode #14</div><div class="blogGrid__BlogGrid-sc-eecfdt-0 clCOHA"><div class="blogSection__Section-sc-1fn1vbl-0 qNLEX"><div size="4" class="leftSection__LeftSection-sc-v7to2y-0 dA-DBGB"><h2>LeetCode 14 - Longest Common Prefix in array of strings</h2><h3>Write a function to find the longest common prefix string amongst an array of strings.</h3><p>  Return an empty string if none is available.</p><a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank">Problem Link</a><h4>Some Examples:</h4><pre><code>input strs = [&#x27;car&#x27;, &#x27;boat&#x27;, &#x27;animal&#x27;];
+</style></head><body><div id="__next"><div class="grid__Grid-sc-nn7lso-0 hfcYwI"><div class="grid__Row-sc-nn7lso-1 biWiqL"><div size="1" class="grid__Col-sc-nn7lso-2 dEpcAy"><div class="leftNav__LeftNav-sc-1yp0y0r-0 bRLSAi"><a href="/" class="logo__Logo-sc-oopcgj-0 kAXOGy">Exploratorium</a><input placeholder="Search" class="searchBar__SearchBar-sc-oz04ga-0 kciVLj"/><hr/></div></div><div size="10" class="grid__Col-sc-nn7lso-2 fntOaq"><div class="mainPage__Main-sc-1s4f2ts-0 ezyWNj"><div class="grid__Grid-sc-nn7lso-0 hfcYwI"><div class="postTitle__PostTitle-sc-3fkvn9-0 kILAip">LeetCode #14</div><div class="blogGrid__BlogGrid-sc-1amdm54-0 fMgZbi"><div class="blogSection__Section-sc-19valth-0 bOwJbG"><div size="4" class="leftSection__LeftSection-sc-5s7t33-0 kqXVQf"><h2>LeetCode 14 - Longest Common Prefix in array of strings</h2><h3>Write a function to find the longest common prefix string amongst an array of strings.</h3><p>  Return an empty string if none is available.</p><a href="https://leetcode.com/problems/longest-common-prefix/" target="_blank">Problem Link</a><h4>Some Examples:</h4><pre><code>input strs = [&#x27;car&#x27;, &#x27;boat&#x27;, &#x27;animal&#x27;];
 output = &#x27;&#x27; // there are no common prefixes
 </code></pre><pre><code>input strs = [&#x27;stigma&#x27;, &#x27;stephan&#x27;, &#x27;steven&#x27;];
 output = &#x27;st&#x27;
@@ -83,4 +85,4 @@ theres no chance to have a prefix in the rest of the strings.</p><h4>In practice
   4th iteration: sti
   5th iteration st
   and we now have a match ! : st
-</code></pre></div><div size="8" height="380" class="rightSection__RightSection-sc-ihp0el-0 sjvaR"><h2>Code</h2></div></div></div></div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/articles/leetCode/14_longest_prefix","query":{},"buildId":"bH7k2S6y1DlKQ18v90cse","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
+</code></pre></div><div size="8" height="380" class="rightSection__RightSection-sc-1nzssd9-0 hoFRkr"><h2>Code</h2></div></div></div></div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/articles/leetCode/14_longest_prefix","query":{},"buildId":"dEVFsdvSnaocnnFjkO9yP","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
