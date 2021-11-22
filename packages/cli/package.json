@@ -5,7 +5,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "commander": "^8.3.0",
     "inquirer": "^8.2.0"
   },
   "scripts": {
