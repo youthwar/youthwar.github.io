@@ -1,17 +1,22 @@
-import React from 'react';
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { Col, Logo, Grid, Row, LeftNav, Main } from './';
-import Search from '../search';
+import { Col, Logo, Grid, Row, LeftNav, Main } from "./";
+import Search from "../search";
 
 type Props = {
   children?: JSX.Element;
   pageTitle: string;
   description: string;
   posts: any[];
-}
+};
 
-const Layout: React.FC<Props> = ({ children, pageTitle, description, posts }: Props) => {
+const Layout: React.FC<Props> = ({
+  children,
+  pageTitle,
+  description,
+  posts,
+}: Props): JSX.Element => {
   return (
     <>
       <Head>
@@ -25,23 +30,19 @@ const Layout: React.FC<Props> = ({ children, pageTitle, description, posts }: Pr
           <Col size={1}>
             <LeftNav>
               <Link href="/" passHref>
-                <Logo>
-                  Exploratorium
-                </Logo>
+                <Logo>Exploratorium</Logo>
               </Link>
               <Search posts={posts} />
             </LeftNav>
           </Col>
 
           <Col size={10}>
-            <Main>
-              {children}
-            </Main>
+            <Main>{children}</Main>
           </Col>
         </Row>
       </Grid>
     </>
   );
-}
+};
 
 export default Layout;

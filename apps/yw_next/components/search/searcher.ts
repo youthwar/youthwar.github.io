@@ -1,14 +1,21 @@
 import { Article } from '@components/types'
-
+import { SearchResult } from './types';
 type NGrams = string[];
+type DBEntry =  {
+  id: number;
+  fullStr: string;
+  link: string;
+  title: string;
+  nGrams: NGrams;
+};
 
 type DB = {
-  [key: string]: any
+  [key: string]: DBEntry
 }
 
 class Search{
   cache:{
-    [key: string]: any
+    [key: string]: SearchResult[]
   } = {};
   DB: DB = {};
   nGramSize = 2;
@@ -17,7 +24,7 @@ class Search{
     const nGramPadding = this.nGramSize - 1;
     s = `${' '.repeat(nGramPadding)}${s.toLowerCase()}${' '.repeat(nGramPadding - 1)}`;
 
-    let ngrams = new Array((s.length - this.nGramSize) + 1);
+    const ngrams = new Array((s.length - this.nGramSize) + 1);
 
     for (let i = 0; i < ngrams.length; i++) {
       ngrams[i] = s.slice(i, i + this.nGramSize);
@@ -25,9 +32,9 @@ class Search{
     return ngrams;
   }
 
-  calculateDistance(query: string) {
+  calculateDistance(query: string): SearchResult[] {
 
-    if (!query) { return [{ key: null, query, score: 0.0 }]; }
+    if (!query) { return [{ key: null, query: { nGrams: [], query}, score: 0.0}]; }
 
     if (this.cache[query]) return this.cache[query];
 
@@ -68,12 +75,13 @@ class Search{
       }
     });
 
-    const hydratedResults = scores
+    const hydratedResults: SearchResult[] = scores
       .sort((a, z) => z.score - a.score)
       .map((result) => {
+        const resultData = this.DB[result.key];
         return {
           ...result,
-          data: this.DB[result.key]
+          data: resultData
         };
       });
 
@@ -81,7 +89,7 @@ class Search{
     return this.cache[query];
   }
 
-  query(queryString: string) {
+  query(queryString: string): SearchResult[] {
     return this.calculateDistance(queryString)
   }
 
@@ -103,7 +111,7 @@ class Search{
       const fullStr = `${title} ${description} ${categories.join(' ')}`;
       const nGrams = this.createNGrams(fullStr);
       const id = this.generateUUID(link);
-      const Obj= {
+      const Obj: DBEntry = {
         id,
         fullStr,
         link: `/articles${link}`,
