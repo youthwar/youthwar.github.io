@@ -1,7 +1,5 @@
-const rightCol = ({ children }: any) => {
-  return (
-    <div className="col-7">{ children  } </div>
-  )
-}
+const rightCol = ({ children }: { children: JSX.Element }): JSX.Element => {
+  return <>{children} </>;
+};
 
 export default rightCol;

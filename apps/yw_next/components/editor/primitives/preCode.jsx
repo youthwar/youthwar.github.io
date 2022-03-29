@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default  styled.pre({
+export default styled.pre({
   background: '#333',
   whiteSpace: 'pre',
   wordWrap: 'break-word',

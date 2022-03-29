@@ -1,6 +1,4 @@
-const Title = ({ title }: { title: string; }) => {
-  return (
-    <div> {title} </div>
-  )
-}
+const Title = ({ title }: { title: string }): JSX.Element => {
+  return <div> {title} </div>;
+};
 export default Title;

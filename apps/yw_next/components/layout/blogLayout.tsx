@@ -1,12 +1,12 @@
-import React from 'react';
-import { BlogGrid, Grid, Row, PostTitle } from '@components/layout';
+import React from "react";
+import { BlogGrid, Grid, Row, PostTitle } from "@components/layout";
 
 type Props = {
   children?: JSX.Element;
   meta: { [key: string]: any };
 };
 
-const BlogPost: React.FC<Props> = ({ children, meta }: Props) => {
+const BlogPost: React.FC<Props> = ({ children, meta }: Props): JSX.Element => {
   const { title } = meta;
 
   return (
@@ -14,7 +14,7 @@ const BlogPost: React.FC<Props> = ({ children, meta }: Props) => {
       <PostTitle>{title}</PostTitle>
       <BlogGrid>{children}</BlogGrid>
     </Grid>
-  )
-}
+  );
+};
 
 export default BlogPost;
