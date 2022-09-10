@@ -7,5 +7,6 @@ export default styled.button({
   border: 'none',
   padding: '10px',
   textTransform: 'uppercase',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  flex: 1,
 });

@@ -23,7 +23,6 @@ const Home: NextPage = () => {
     .sort((a: Article, z: Article) => {
       const aDate: number = new Date(a.module.meta.date).getTime();
       const zDate: number = new Date(z.module.meta.date).getTime();
-      // @ts-ignore
       return zDate - aDate;
     })
     .map(

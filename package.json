@@ -1,8 +1,12 @@
 {
   "private": true,
   "name": "yw-monorepo",
-  "workspaces": ["packages/*", "apps/*"],
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "newArticle": "yarn workspace cli build"
+    "newArticle": "yarn workspace cli build",
+    "dev": "yarn workspace @yw/web dev"
   }
 }

@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,11 +19,23 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@components/*": ["components/*"],
-      "@codeSnippets/*": ["codesnippets/*"]
-    }
+      "@components/*": [
+        "components/*"
+      ],
+      "@codeSnippets/*": [
+        "codesnippets/*"
+      ]
+    },
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/search/index.tsx", "components/search/searcher.jsx"],
-  "exclude": ["node_modules"],
-  
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/search/index.tsx",
+    "components/search/searcher.jsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

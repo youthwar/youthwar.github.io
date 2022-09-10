@@ -5,25 +5,29 @@ import "codemirror/lib/codemirror.css";
 import Logger from "./logger";
 import EditorWrap from "./primitives/editorWrap";
 import RunButton from "./primitives/runButton";
+import TestButton from "./primitives/testButton";
 import ClearButton from "./primitives/clearButton";
 import PreCode from "./primitives/preCode";
 
 const CodeEditor = ({
   code,
   height,
-  editable,
+  editable = true,
+  test = false,
 }: {
   code: string;
-  editable?: boolean;
+  test: boolean;
   height: string;
+  editable?: boolean;
 }) => {
-  const [output, setOutput] = useState(false);
+  const [output, setOutput] = useState<Boolean>(false);
+  const [stateCode, setCode] = useState(code);
 
-  const runCode = () => {
+  const runCode = (): void => {
     const newFNSTR: string = `
       const logger = ${Logger};
       const newConsole = new logger();
-      ${code};
+      ${stateCode};
       return newConsole.queue;
     `;
 
@@ -32,7 +36,7 @@ const CodeEditor = ({
     setOutput(results.join("\n"));
   };
 
-  const clearResults = () => {
+  const clearResults = (): void => {
     setOutput(false);
   };
 
@@ -40,16 +44,21 @@ const CodeEditor = ({
     <>
       <EditorWrap height={height}>
         <CodeMirror
-          value={code}
+          value={stateCode}
           options={{
             mode: "javascript",
             lineNumbers: true,
           }}
-          onBeforeChange={(editor, data, value) => {}}
+          onBeforeChange={(editor, data, value) => {
+            editable ? setCode(value) : undefined;
+          }}
           onChange={(editor, data, value) => {}}
         />
       </EditorWrap>
-      <RunButton onClick={runCode}>Run it</RunButton>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <RunButton onClick={runCode}>Run it</RunButton>
+        {test && <TestButton>test</TestButton>}
+      </div>
       {output && (
         <>
           <PreCode>
