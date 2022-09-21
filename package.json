@@ -9,5 +9,6 @@
     "newArticle": "yarn workspace cli build",
     "dev": "yarn workspace @yw/web dev",
     "build": "yarn workspace @yw/web build"
+
   }
 }

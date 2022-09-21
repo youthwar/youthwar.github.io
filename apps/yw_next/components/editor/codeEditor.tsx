@@ -28,7 +28,6 @@ const CodeEditor = ({
   editable?: boolean;
 }) => {
   const [output, setOutput] = useState<Boolean>(false);
-
   const editorRef = React.useRef<EditorType | null>(null);
 
   const SetRef = (editor: EditorType) => {
@@ -64,6 +63,7 @@ const CodeEditor = ({
         onMount={SetRef}
         theme="vs-dark"
       />
+
       <div style={{ display: "flex", flexDirection: "row" }}>
         <RunButton onClick={runCode}>Run it</RunButton>
         {test && <TestButton>test</TestButton>}

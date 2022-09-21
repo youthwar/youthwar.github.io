@@ -31,6 +31,7 @@ const InterviewPrep = () => {
           <p>{randomQuestion.prompt}</p>
           <hr />
           <Editor height={"500px"} code={randomQuestion.boilerPlate} test />
+
         </LeftSection>
       </Section>
     </BlogLayout>
