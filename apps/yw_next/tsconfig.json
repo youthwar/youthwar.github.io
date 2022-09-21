@@ -24,6 +24,9 @@
       ],
       "@codeSnippets/*": [
         "codesnippets/*"
+      ],
+      "@interviewQuestions/*": [
+        "interviewQuestions/*"
       ]
     },
     "incremental": true

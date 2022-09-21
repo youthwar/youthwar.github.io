@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BlogLayout, Section, LeftSection } from "@components/layout";
 import Editor from "@components/editor";
-import questions from "./questions";
+import questions from "@interviewQuestions/index";
 const InterviewPrep = () => {
   function generateRandomInteger(): number {
     return Math.floor(Math.random() * questions.length);
@@ -17,8 +17,6 @@ const InterviewPrep = () => {
       setUsedIntegers([...usedIntegers, potentialIdx]);
       return setRandomIndex(potentialIdx);
     }
-
-    console.log("keep firing");
 
     setNextQuestion(generateRandomInteger());
   };
