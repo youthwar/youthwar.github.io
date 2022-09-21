@@ -1,5 +1,10 @@
 import { Controlled as CodeMirror } from "react-codemirror2";
-import { useState } from "react";
+
+import React, { useState } from "react";
+
+import ts from "typescript";
+import Editor from "@monaco-editor/react";
+
 import "codemirror/mode/javascript/javascript";
 import "codemirror/lib/codemirror.css";
 import Logger from "./logger";
@@ -9,9 +14,11 @@ import TestButton from "./primitives/testButton";
 import ClearButton from "./primitives/clearButton";
 import PreCode from "./primitives/preCode";
 
+type EditorType = { getValue: () => string };
+
 const CodeEditor = ({
   code,
-  height,
+  height = "500px",
   editable = true,
   test = false,
 }: {
@@ -21,13 +28,21 @@ const CodeEditor = ({
   editable?: boolean;
 }) => {
   const [output, setOutput] = useState<Boolean>(false);
-  const [stateCode, setCode] = useState(code);
+
+  const editorRef = React.useRef<EditorType | null>(null);
+
+  const SetRef = (editor: EditorType) => {
+    editorRef.current = editor;
+  };
 
   const runCode = (): void => {
+    const value = editorRef.current?.getValue();
+    const transpiledCode = ts.transpile(value ?? "");
+
     const newFNSTR: string = `
       const logger = ${Logger};
       const newConsole = new logger();
-      ${stateCode};
+      ${transpiledCode};
       return newConsole.queue;
     `;
 
@@ -42,19 +57,13 @@ const CodeEditor = ({
 
   return (
     <>
-      <EditorWrap height={height}>
-        <CodeMirror
-          value={stateCode}
-          options={{
-            mode: "javascript",
-            lineNumbers: true,
-          }}
-          onBeforeChange={(editor, data, value) => {
-            editable ? setCode(value) : undefined;
-          }}
-          onChange={(editor, data, value) => {}}
-        />
-      </EditorWrap>
+      <Editor
+        height={height}
+        defaultLanguage="typescript"
+        defaultValue={code}
+        onMount={SetRef}
+        theme="vs-dark"
+      />
       <div style={{ display: "flex", flexDirection: "row" }}>
         <RunButton onClick={runCode}>Run it</RunButton>
         {test && <TestButton>test</TestButton>}
