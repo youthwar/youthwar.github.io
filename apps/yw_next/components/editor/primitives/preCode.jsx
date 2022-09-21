@@ -10,6 +10,7 @@ export default styled.pre({
   border: '1px solid #292929',
   position: 'relative',
   width: '100%',
+  boxSizing: 'border-box',
   'label': {
     fontFamily: 'sans-serif',
     fontWeight: 'bold',

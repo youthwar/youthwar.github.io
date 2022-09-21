@@ -5,9 +5,11 @@ export const LeftNav = styled.div({
   minHeight: '100vh',
   height: '100%',
   padding: '2em 1em',
+  width: '300px',
   '@media (max-width: 1025px)': {
     height: 35,
     minHeight: 35,
-    padding: '1em'
+    padding: '1em',
+    
   }
 });

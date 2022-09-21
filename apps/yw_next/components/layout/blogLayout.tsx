@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogGrid, Grid, Row, PostTitle } from "@components/layout";
+import { BlogGrid, Grid, PostTitle } from "@components/layout";
 
 type Props = {
   children?: JSX.Element;
